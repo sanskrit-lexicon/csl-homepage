@@ -322,10 +322,10 @@ def dict_line(s,title_in):
  if s.pfx == 'STC':
   titlelink = "<a href='%s/index_fr.php'>%s</a>" %(basedir,title)
  elif s.pfx == 'AP':
-  basedir1 = "/scans/awork/homepage"
+  basedir1 = "/scans/awork/csl-homepage"
   titlelink = "<a href='%s/ap-sample.php'>%s</a>" % (basedir1,title)
  elif s.pfx == 'PD':
-  basedir1 = "/scans/awork/homepage"
+  basedir1 = "/scans/awork/csl-homepage"
   titlelink = "<a href='%s/pd-sample.php'>%s</a>" % (basedir1,title)
 
  style = 'font-size:12pt;'
@@ -592,7 +592,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Jul 22, 2019</p>
+   <p>Last modified: Jul 30, 2019</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
