@@ -483,7 +483,8 @@ def deprecated(pfxdict):
  #lines.append(dl('/mwquery/index.html','Monier-Williams Advanced Search, 2008'))
  lines.append(dl('/scans/MWScan/tamil/index.html','Sanskrit and Tamil  Dictionaries, 2005'))
  lines.append(dl('/scans/WILScan/web/index.php','Wilson Sanskrit-English Dictionary, semi-digitized edition, 2008'))
- lines.append(dl('/aequery/index.html','Apte English-Sanskrit Dictionary, 2007'))
+ # removed next 09-23-2019
+ #lines.append(dl('/aequery/index.html','Apte English-Sanskrit Dictionary, 2007'))
  lines.append(dl('/scans/PWGScan/disp2/index.php','Boehtlingk &amp; Roth Sanskrit-German Dictionary, 2011'))
  lines.append(dl('/scans/PWScan/disp2/index.php','Boehtlingk + Schmidt Sanskrit-German Dictionary, 2012'))
 
