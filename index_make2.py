@@ -479,7 +479,8 @@ def deprecated(pfxdict):
   return deprecated_line(h,t)
  lines.append(dl('/scans/MWScan/2012/web/index.php','Monier-Williams Sanskrit-English Dictionary, 2012/2013 displays'))
  lines.append(dl('/monier/indexcaller.php','Monier-Williams Sanskrit-English Dictionary, 2008'))
- lines.append(dl('/mwquery/index.html','Monier-Williams Advanced Search, 2008'))
+ # removed next 09-23-2019
+ #lines.append(dl('/mwquery/index.html','Monier-Williams Advanced Search, 2008'))
  lines.append(dl('/scans/MWScan/tamil/index.html','Sanskrit and Tamil  Dictionaries, 2005'))
  lines.append(dl('/scans/WILScan/web/index.php','Wilson Sanskrit-English Dictionary, semi-digitized edition, 2008'))
  lines.append(dl('/aequery/index.html','Apte English-Sanskrit Dictionary, 2007'))
@@ -592,7 +593,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Jul 30, 2019</p>
+   <p>Last modified: Sep 23, 2019</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
