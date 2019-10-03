@@ -594,7 +594,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Sep 23, 2019</p>
+   <p>Last modified: Oct 3, 2019</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
