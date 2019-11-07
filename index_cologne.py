@@ -1,5 +1,5 @@
 # coding=utf-8
-""" index_make2.py  July 9, 2014, 
+""" index_cologne.py  Begun July 9, 2014, 
     Make Sanskrit-Lexicon home page.
     Use indexdirs.xml
     Revised June 5, 2015
@@ -322,10 +322,10 @@ def dict_line(s,title_in):
  if s.pfx == 'STC':
   titlelink = "<a href='%s/index_fr.php'>%s</a>" %(basedir,title)
  elif s.pfx == 'AP':
-  basedir1 = "/scans/awork/csl-homepage"
+  basedir1 = "/scans/csl-homepage/ap_pd_samples"
   titlelink = "<a href='%s/ap-sample.php'>%s</a>" % (basedir1,title)
  elif s.pfx == 'PD':
-  basedir1 = "/scans/awork/csl-homepage"
+  basedir1 = "/scans/csl-homepage/ap_pd_samples"
   titlelink = "<a href='%s/pd-sample.php'>%s</a>" % (basedir1,title)
 
  style = 'font-size:12pt;'
