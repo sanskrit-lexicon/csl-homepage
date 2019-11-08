@@ -425,7 +425,7 @@ def misc():
   return deprecated_line(h,t)
  #lines.append(dl('/scans/KALEScan/disp1/index1.php?sfx=png','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
  lines.append(dl('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
- #lines.append(dl('/scans/KALEScan/WRScan/disp2/index.php',"Whitney's Roots, 1885 (Scanned)"))
+ lines.append(dl('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"))
  #lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
  #lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
  #lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
