@@ -423,12 +423,12 @@ def misc():
  lines.append('<tr style="background:#FFFFCC"><td colspan="%s"><h2>%s</h2></td></tr>' % (colspan,section_title))
  def dl(h,t): # for convenience
   return deprecated_line(h,t)
- lines.append(dl('/scans/KALEScan/disp1/index1.php?sfx=png','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
- lines.append(dl('/scans/MWScan/Westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
- lines.append(dl('/scans/KALEScan/WRScan/disp2/index.php',"Whitney's Roots, 1885 (Scanned)"))
- lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
- lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
- lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
+ #lines.append(dl('/scans/KALEScan/disp1/index1.php?sfx=png','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
+ lines.append(dl('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
+ #lines.append(dl('/scans/KALEScan/WRScan/disp2/index.php',"Whitney's Roots, 1885 (Scanned)"))
+ #lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
+ #lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
+ #lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
  return lines
 
 def dictdiv(pfxdict):
@@ -442,7 +442,7 @@ def dictdiv(pfxdict):
   san_special(pfxdict),
   # skip these for local installation
   #deprecated(pfxdict),
-  #misc()
+  misc()
   ]
  for part in parts:
   ans = ans + ['<tr><td>'] + part + ['</td></tr>']
@@ -519,7 +519,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Oct 3, 2019</p>
+   <p>Last modified: Nov 8, 2019</p>
   </div>
 <!-- skip for local installation
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
