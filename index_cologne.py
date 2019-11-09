@@ -146,19 +146,6 @@ def purpos1ediv():
 
  div ="""
  <div id="purpose1">
-<!-- Removed 08/08/2018
-   <p>
-    This web page provides access to many of the Sanskrit lexicons prepared
-    by the Institute of Indology and Tamil Studies, Cologne University.
-
-   <br/>
-    The dictionaries are organized primarily by the secondary language
-    (English, German, etc.), and then by date of publication.
-   <br/>
-    Each dictionary has several types of display, as well as a comprehensive
-       selection of materials for download.
-   </p>
--->
    <p>
      Welcome to the Sanskrit lexicons prepared since 1994 by the Institute of Indology and Tamil Studies, Cologne University.
    <br/>
@@ -171,25 +158,17 @@ def purpos1ediv():
 
    <p>
      <a href='/scans/csldev/csldoc/build/index.html' target="_csldoc"><b>Documentation</b></a>
-   <!--
-     <a href='/scans/csldoc/index.html' target="_csldoc"><b>Documentation</b></a>
--->
+   
+<!--
    &nbsp; &nbsp;
-    <!-- Removed: Dec 13, 2016
-    (Previous Cologne Sanskrit-Lexicon <a href='index_prev.html'>Home Page</a>)
-    -->
-    <!--
-    <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/sample/list-0.2.html"> <img src="/images/new_item.png"> &nbsp;display</a>
-    -->
-    <!-- removed 12-21-2017
-    <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/sample/list-0.2.html">  <b>New Display</b> (Dec 2016)</a>
-   &nbsp; &nbsp;
-    -->
      <b>New Displays: </b> &nbsp;
     <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/sample/list-0.2.html">(Dec 2016)</a>
    &nbsp; 
     <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/simple-search/v1.0/list-0.2s.html">(Dec 2017)</a>
-   
+-->
+   &nbsp; &nbsp;
+    <a href="/scans/awork/apidev/simple-search/v1.0/list-0.2s.html"><b>Simple-Search</b></a>
+
    <span style="position:absolute;right:11%">
     Found an error? 
     <a href='/scans/csldoc/contrib/index.html' target="_csldoc">
@@ -498,9 +477,12 @@ def misc():
  lines.append('<tr style="background:#FFFFCC"><td colspan="%s"><h2>%s</h2></td></tr>' % (colspan,section_title))
  def dl(h,t): # for convenience
   return deprecated_line(h,t)
- lines.append(dl('/scans/KALEScan/disp1/index1.php?sfx=png','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
+ #lines.append(dl('/scans/KALEScan/disp1/index1.php?sfx=png','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
+ lines.append(dl('scans/csl-kale/disp/index.php','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
+
  #lines.append(dl('/scans/MWScan/Westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
  lines.append(dl('/scans/csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
+
  #lines.append(dl('/scans/KALEScan/WRScan/disp2/index.php',"Whitney's Roots, 1885 (Scanned)"))
  lines.append(dl('/scans/csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"))
  lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
@@ -596,7 +578,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Nov 8, 2019</p>
+   <p>Last modified: Nov 9, 2019</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>

@@ -106,11 +106,15 @@ def purpos1ediv():
 
    <p>
      <a href='csl-doc/build/index.html' target="_csldoc"><b>Documentation</b></a>
+ <!--
    &nbsp; &nbsp;
      <b>New Displays: </b> &nbsp;
     <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/sample/list-0.2.html">(Dec 2016)</a>
    &nbsp; 
     <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/simple-search/v1.0/list-0.2s.html">(Dec 2017)</a>
+ -->
+   &nbsp; &nbsp;
+   <a href="csl-apidev/simple-search/v1.0/list-0.2s_xampp.html"><b>Simple-Search</b></a>
    
    <span style="position:absolute;right:11%">
     Found an error? 
@@ -423,9 +427,20 @@ def misc():
  lines.append('<tr style="background:#FFFFCC"><td colspan="%s"><h2>%s</h2></td></tr>' % (colspan,section_title))
  def dl(h,t): # for convenience
   return deprecated_line(h,t)
- #lines.append(dl('/scans/KALEScan/disp1/index1.php?sfx=png','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
- lines.append(dl('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
- lines.append(dl('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"))
+ # add these modules if they are installed
+ # detect installation by whether the php program file exists.
+ # Idea: We could use the Cologne installation if local installation does not
+ # exist
+ apps = [
+  ('csl-kale/disp/index.php','Kale Higher Sanskrit Grammar, 1894 (Scanned)'),
+  ('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'),
+  ('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)")
+ ]
+ for applink,apptitle in apps:
+  # this index_xampp.py file is in csl-homepage, and
+  # the the app directories of siblings of csl-homepage. Hence "../" needed.
+  if os.path.exists("../"+applink):
+   lines.append(dl(applink,apptitle))
  #lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
  #lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
  #lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
@@ -519,7 +534,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Nov 8, 2019</p>
+   <p>Last modified: Nov 9, 2019</p>
   </div>
 <!-- skip for local installation
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
