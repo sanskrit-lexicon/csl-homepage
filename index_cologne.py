@@ -485,7 +485,8 @@ def misc():
 
  #lines.append(dl('/scans/KALEScan/WRScan/disp2/index.php',"Whitney's Roots, 1885 (Scanned)"))
  lines.append(dl('/scans/csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"))
- lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
+ #lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
+ lines.append(dl('/scans/csl-inflect/web/index.php','MW Inflected forms'))
  lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
  lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
  return lines

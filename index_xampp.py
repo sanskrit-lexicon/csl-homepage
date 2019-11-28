@@ -434,7 +434,8 @@ def misc():
  apps = [
   ('csl-kale/disp/index.php','Kale Higher Sanskrit Grammar, 1894 (Scanned)'),
   ('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'),
-  ('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)")
+  ('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"),
+  ('csl-inflect/web/index.php',"MW Inflected forms")
  ]
  for applink,apptitle in apps:
   # this index_xampp.py file is in csl-homepage, and
@@ -534,7 +535,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Nov 9, 2019</p>
+   <p>Last modified: Nov 27, 2019</p>
   </div>
 <!-- skip for local installation
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
