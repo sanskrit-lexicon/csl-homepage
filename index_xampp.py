@@ -2,6 +2,7 @@
 """ index_xampp.py 
     Make Sanskrit-Lexicon home page FOR local installations.
 """
+from __future__ import print_function
 import sys,codecs
 import re
 import os
@@ -87,7 +88,8 @@ def headerdiv():
   <hr style="width:89%; margin-left:0px;"/>
 
 """
- lines = string.split(div, '\n\r') 
+ #lines = string.split(div, '\n\r') 
+ lines = div.split('\n\r')
  return lines
 
 def purpos1ediv():
@@ -126,7 +128,8 @@ def purpos1ediv():
 
   </div>
 """
- lines = string.split(div, '\n\r') 
+ #lines = string.split(div, '\n\r') 
+ lines = div.split('\n\r')
  return lines
 
 def make_link(href,title,text):
@@ -268,9 +271,9 @@ def dict_line(s,title_in):
  try:
   ans = "\n   ".join(parts)
  except:
-  print "ERROR JOINING"
+  print("ERROR JOINING")
   for part in parts:
-   print "part = ",part
+   print("part = ",part)
   exit(1)
  return ans
 
@@ -473,7 +476,7 @@ def index01_bodylines(pfxdict):
 
 def index01(filein,fileout):
  pfxdict = parse_indexdirs(filein)
- #print pfxdict["PW"].toStringdbg().encode('utf-8')
+ #print(pfxdict["PW"].toStringdbg())
 
  lines = [] # array of lines to be output
  head = """<!DOCTYPE html>
@@ -509,7 +512,7 @@ entstanden:
      The markup of the various dictionaries was designed and implemented by: </p>
      <ul>
       <li>
-       <a href="mailto:th.malten@uni-koeln.de">Thomas Malten</a> (Cologne University) and <a href="https://www.sanskrit-lexicon.uni-koeln.de/images/Aurorachana_Staff_2006(1).jpg">assistants</a> in India
+       <a href="mailto:th.malten@gmail.com">Thomas Malten</a> (Cologne University) and <a href="https://www.sanskrit-lexicon.uni-koeln.de/images/Aurorachana_Staff_2006(1).jpg">assistants</a> in India
       </li>
       <li>
        <a href="//www.sanskritlibrary.org">Peter Scharf</a> (The Sanskrit Library)
@@ -535,7 +538,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: Nov 27, 2019</p>
+   <p>Last modified: May 24, 2020</p>
   </div>
 <!-- skip for local installation
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
@@ -543,8 +546,10 @@ entstanden:
 </body>
 </html>
 """
- headlines = string.split(head, '\n\r') 
- taillines = string.split(tail, '\n\r') 
+ #headlines = string.split(head, '\n\r') 
+ #taillines = string.split(tail, '\n\r') 
+ headlines = head.split('\r\n')
+ taillines = tail.split('\r\n')
  bodylines=index01_bodylines(pfxdict)
  for line in headlines:
   lines.append(line)
@@ -562,4 +567,4 @@ if __name__  =="__main__":
  filein = sys.argv[1]
  fileout = sys.argv[2]
  index01(filein,fileout)
- print "DID YOU CHANGE 'Date last modified'?"
+ print("DID YOU CHANGE 'Date last modified'?")
