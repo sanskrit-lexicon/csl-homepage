@@ -240,7 +240,8 @@ def dict_line_extralinks(s):
       ('/scans/STCScan/web/index_fr.php',u'semi-numérique','SD'),
       ],
   'PGN':[
-      ('/scans/PGNScan/2014/web/webscan/index.php','Scanned edition','S')
+      #('/scans/PGNScan/2014/web/webscan/index.php','Scanned edition','S')
+      ('/scans/PGNScan/2014/webscan/index.php','Scanned edition','S')
       ]
  }
 
@@ -583,7 +584,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: May 24, 2020</p>
+   <p>Last modified: October 9, 2020</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
