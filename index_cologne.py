@@ -174,7 +174,7 @@ def purpos1ediv():
 
    <span style="position:absolute;right:11%">
     Found an error? 
-    <a href='/scans/csldoc/contrib/index.html' target="_csldoc">
+    <a href='/scans/csldev/csldoc/build/contrib.html' target="_csldoc">
       <b>Help us on <img src="/images/github-9-16.gif">GitHub</b>
     </a>
    </span>
@@ -584,7 +584,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: October 9, 2020</p>
+   <p>Last modified: October 10, 2020</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
