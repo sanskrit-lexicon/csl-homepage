@@ -28,7 +28,8 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "MWE":True , "PD":True , "PE":True , "PGN":True,
        "PUI":True , "PWG":False , "PW":False , "SCH":False,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
-       "VCP":True , "VEI":True , "WIL":False , "YAT":True}
+       "VCP":True , "VEI":True , "WIL":False , "YAT":True,
+       "LAN":False}
 class Scan(object):
  def __init__(self,e):
   self.pfx = e.find('pfx').text
@@ -381,6 +382,7 @@ def san_english(pfxdict):
   ("SHS","Shabda-Sagara Sanskrit-English Dictionary"),
   ("WIL","Wilson Sanskrit-English Dictionary"),
   ("YAT","Yates Sanskrit-English Dictionary"),
+  ("LAN","Lanman's Sanskrit Reader Vocabulary"),
   ("AP","Practical Sanskrit-English Dictionary, revised edition"),
   ("PD","An Encyclopedic Dictionary of Sanskrit on Historical Principles")
  ]
@@ -584,7 +586,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: October 10, 2020</p>
+   <p>Last modified: November 22, 2020</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
