@@ -117,8 +117,12 @@ def purpos1ediv():
     <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/simple-search/v1.0/list-0.2s.html">(Dec 2017)</a>
  -->
    &nbsp; &nbsp;
+<!--
    <a href="csl-apidev/simple-search/v1.0/list-0.2s_xampp.html"><b>Simple-Search</b></a>
-   
+-->
+<!-- make use of .htaccess rewrite. In xampp, .htaccess is in /cologne/
+ -->
+    <a href="/cologne/simple/"><b>Simple-Search</b></a>
    <span style="position:absolute;right:11%">
     Found an error? 
     <a href='csl-doc/build/contrib.html' target="_csldoc">
@@ -540,7 +544,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: November 22, 2020</p>
+   <p>Last modified: December 8, 2020</p>
   </div>
 <!-- skip for local installation
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
