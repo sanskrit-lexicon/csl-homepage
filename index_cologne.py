@@ -175,7 +175,10 @@ def purpos1ediv():
     <a href="/scans/awork/apidev/simple-search/v1.0/list-0.2s.html"><b>Simple-Search</b></a>
 -->
 <!-- make use of rewrite-rule -->
+<!-- this adds www at Cologne
     <a href="/simple/"><b>Simple-Search</b></a>
+-->
+<a href="//sanskrit-lexicon.uni-koeln.de/simple/"><b>Simple-Search</b></a>
 
    <span style="position:absolute;right:11%">
     Found an error? 
@@ -590,7 +593,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: December 8, 2020</p>
+   <p>Last modified: December 10, 2020</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
