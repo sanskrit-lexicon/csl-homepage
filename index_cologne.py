@@ -71,30 +71,6 @@ def parse_indexdirs(filein):
   d[rec.pfx]=rec
  return d
 
-def prev_headerdiv():
- div ="""
- <div id="header">
-  <table>
-  <tr>
-  <td>
-  <img src="/images/cologne_univ_seal.gif" id="logo" alt="IITS" title="Cologne Sanskrit Lexicon"/>
-  <br/>
-  <span class="style19">
-   UNIVERSIT&Auml;T ZU K&Ouml;LN <br />
-  </span>
-  </td>
-  <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
-  <td>
-  <span class="style1">Cologne Digital Sanskrit Dictionaries</span>
-  </td>
-  </tr>
-  </table>
-  <hr/>
- </div>
-"""
- #lines = string.split(div, '\n\r') 
- lines = div.split('\n\r')
- return lines
 
 def headerdiv():
  """ Aug 1, 2018. clarin logo.
@@ -129,24 +105,6 @@ def headerdiv():
  return lines
 
 def purpos1ediv():
- divunused ="""
- <div id="purpose1">
-   <h2>Purpose</h2>
-   <p>
-    This web page provides access to some of the Sanskrit lexicons prepared
-    by the Institute of Indology and Tamil Studies, Cologne University.
-    A 1997 review of the Cologne Digital Sanskrit Lexicon project
-    (<a href="/CDSL.pdf">CDSL</a>)
-    may be of interest.</p>
-   <p>
-    The data is made available to scholars
-    and students in two forms. The first form is  that of <em>scanned images</em> of the
-    works, which provides a convenient substitute to  the physical books.
-    The second form is a <em>digitization</em> of the scanned images, which
-    permits computer-aided analyses and displays of the work.
-   </p>
-  </div>
-"""
 
  div ="""
  <div id="purpose1">
