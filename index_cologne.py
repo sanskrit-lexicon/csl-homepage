@@ -6,7 +6,7 @@
     Revised June 23, 2015
     Revised Dec 13, 2016 - Add new apidev display
     Dec 21, 2017. Added 'simple' display
-    Jan 31, 2018. Moved BHS from san_english to san_special
+    Jan 31, 2018o. Moved BHS from san_english to san_special
                   Tamil Lexicon
     May 31, 2018. Add privacy notice section
     Jun 12, 2018. Add Impressum link in privacy section
@@ -153,7 +153,7 @@ def purpos1ediv():
    <p>
      Welcome to the Sanskrit lexicons prepared since 1994 by the Institute of Indology and Tamil Studies, Cologne University.
    <br/>
-  The 36 dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1976).
+  The 37 dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1976).
   <br/>
   Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
   <br/>
@@ -593,7 +593,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: December 10, 2020</p>
+   <p>Last modified: December 21, 2020</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
