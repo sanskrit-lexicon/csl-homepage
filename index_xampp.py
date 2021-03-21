@@ -364,7 +364,7 @@ def san_german(pfxdict):
   ("PWG",u"Böhtlingk and Roth Grosses Petersburger Wörterbuch"),
   ("SCH",u"Schmidt Nachträge zum Sanskrit-Wörterbuch"),
   ("CCS",u"Cappeller Sanskrit Wörterbuch"),
-  ("GRA",u"Grassman Wörterbuch zum Rig Veda")
+  ("GRA",u"Grassmann Wörterbuch zum Rig Veda")
  ]
  section_title='Sanskrit-German Dictionaries'
  return section_lines(pfxs,section_title,pfxdict)
@@ -544,7 +544,7 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: December 21, 2020</p>
+   <p>Last modified: March 20, 2021</p>
   </div>
 <!-- skip for local installation
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
