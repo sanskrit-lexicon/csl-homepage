@@ -29,7 +29,7 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "PUI":True , "PWG":False , "PW":False , "SCH":False,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
-       "LAN":False}
+       "LAN":False,"ARMH":False}
 class Scan(object):
  def __init__(self,e):
   self.pfx = e.find('pfx').text
@@ -392,7 +392,8 @@ def san_latin(pfxdict):
 def san_san(pfxdict):
  pfxs_sandict=[
   ("SKD",""),
-  ("VCP","")
+  ("VCP",""),
+  ("ARMH","")
  ]
  pfxs=pfxs_sandict
  #section_title='Sanskrit-Sanskrit Dictionaries and Concordances'
@@ -491,7 +492,11 @@ def index01(filein,fileout):
 
  lines = [] # array of lines to be output
  #head = """<?xml version="1.0" encoding="UTF-8"?>
- # Aug 21, 2015. Change to HTML5 
+ # Aug 21, 2015. Change to HTML5
+ import datetime
+ today0 = datetime.datetime.now()
+ today = today0.strftime("%B %d, %Y")
+
  head = """<!DOCTYPE html>
 <html>
 <head>
@@ -551,16 +556,14 @@ entstanden:
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: March 20, 2021</p>
+   <p>Last modified: {0}</p>
   </div>
 
 <script type="text/javascript" src="/js/piwik_analytics.js"></script>
 
 </body>
 </html>
-"""
- #headlines = string.split(head, '\n\r') 
- #taillines = string.split(tail, '\n\r') 
+""".format(today)
  headlines = head.split('\r\n')
  taillines = tail.split('\r\n')
  bodylines=index01_bodylines(pfxdict)
@@ -580,4 +583,4 @@ if __name__  =="__main__":
  filein = sys.argv[1]
  fileout = sys.argv[2]
  index01(filein,fileout)
- print("DID YOU CHANGE 'Date last modified'?")
+ #print("DID YOU CHANGE 'Date last modified'?")
