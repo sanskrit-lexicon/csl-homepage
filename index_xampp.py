@@ -265,7 +265,7 @@ def dict_line(s,title_in):
   titlelink = "<a href='%s/pd-sample.php'>%s</a>" % (basedir1,title)
 
  style = 'font-size:12pt;'
- if s.pfx == 'MW':
+ if s.pfx in ['MW','AP90']:
   style = style + 'font-weight:bold;'
  parts.append("  <td width='58%%' style='%s' title='%s,%s,%s pages'>%s</td>" % (style,s.authors,title1,s.textpages,titlelink))
 
