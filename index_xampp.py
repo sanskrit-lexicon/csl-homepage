@@ -20,6 +20,14 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
        "LAN":False,"ARMH":False}
+
+def get_version():
+ versionFile = os.path.join('..', 'csl-orig', '.version')
+ with codecs.open(versionFile, 'r', 'utf-8') as fin:
+   return fin.read().rstrip()
+
+version = get_version()
+
 class Scan(object):
  def __init__(self,e):
   self.pfx = e.find('pfx').text
@@ -94,7 +102,6 @@ def headerdiv():
  return lines
 
 def purpos1ediv():
-
  div ="""
  <div id="purpose1">
    <p>
@@ -123,6 +130,8 @@ def purpos1ediv():
 <!-- make use of .htaccess rewrite. In xampp, .htaccess is in /cologne/
  -->
     <a href="/cologne/simple/"><b>Simple-Search</b></a>
+	&nbsp; &nbsp;
+   <b>version """ + version + """</b>
    <span style="position:absolute;right:11%">
     Found an error? 
     <a href='csl-doc/build/contrib.html' target="_csldoc">
@@ -540,8 +549,9 @@ entstanden:
    <h3>In text citation</h3>
   <p>(Cologne Digital Sanskrit Dictionaries)</p>
   <h3>Bibliographic reference</h3>
-  <pre>Cologne Digital Sanskrit Dictionaries,<br/>
-Cologne University, accessed on {0},<br/>
+  <pre>
+Cologne Digital Sanskrit Dictionaries, version """ + version + """,
+Cologne University, accessed on {0},
 https://www.sanskrit-lexicon.uni-koeln.de
   </pre>
    <h2>How to acknowledge usage of data in a website / application?</h2>
