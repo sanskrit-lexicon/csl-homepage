@@ -545,7 +545,7 @@ entstanden:
       </li>
      </ul>
   <hr style="width:89%; margin-left:0px;"/>
-    <h2>How to cite?</h2>
+   <h2>How to cite in academic publications?</h2>
    <h3>In text citation</h3>
   <p>(Cologne Digital Sanskrit Dictionaries)</p>
   <h3>Bibliographic reference</h3>
@@ -553,6 +553,8 @@ entstanden:
 Cologne University, accessed on {0},<br/>
 https://www.sanskrit-lexicon.uni-koeln.de
   </pre>
+   <h2>How to acknowledge usage of data in a website / application?</h2>
+   <p>This website / application uses data from <a href="https://www.sanskrit-lexicon.uni-koeln.de">Cologne Digital Sanskrit Dictionaries</a>, Cologne University, accessed on {0}.</p>
   <hr style="width:89%; margin-left:0px;"/>
  <div id="privacy">
    <h2>Data protection</h2>
