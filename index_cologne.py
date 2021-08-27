@@ -6,11 +6,12 @@
     Revised June 23, 2015
     Revised Dec 13, 2016 - Add new apidev display
     Dec 21, 2017. Added 'simple' display
-    Jan 31, 2018o. Moved BHS from san_english to san_special
+    Jan 31, 2018. Moved BHS from san_english to san_special
                   Tamil Lexicon
     May 31, 2018. Add privacy notice section
     Jun 12, 2018. Add Impressum link in privacy section
     Jul 04, 2019. Added Dr. Dhaval Patel as maintainer on home page.
+    Aug 27 2021. Added citation and bibliographic reference.
 """
 from __future__ import print_function
 import sys,codecs
@@ -115,7 +116,7 @@ def purpos1ediv():
   <br/>
   Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
   <br/>
-  Most of the dictionaries are also available for offline usage in android phones via <a href="https://play.google.com/store/apps/details?id=sanskritcode.sanskritdictionaryupdater&hl=en" target="_blank">this application</a>. It presumes that some form of stardict viewer is installed on your phone. You may try to install stardict viewer by searching for EBdic, colordict, goldendict or stardict.
+  All dictionaries are also available for offline usage in android phones via <a href="https://play.google.com/store/apps/details?id=sanskritcode.sanskritdictionaryupdater&hl=en" target="_blank">this application</a>. It presumes that some form of stardict viewer is installed on your phone. You may try to install stardict viewer by searching for EBdic, colordict, goldendict or stardict.
   </p>
 
    <p>
@@ -544,7 +545,16 @@ entstanden:
       </li>
      </ul>
   <hr style="width:89%; margin-left:0px;"/>
-  <div id="privacy">
+    <h2>How to cite?</h2>
+   <h3>In text citation</h3>
+  <p>(Cologne Digital Sanskrit Dictionaries)</p>
+  <h3>Bibliographic reference</h3>
+  <pre>Cologne Digital Sanskrit Dictionaries,<br/>
+Cologne University, accessed on {0},<br/>
+https://www.sanskrit-lexicon.uni-koeln.de
+  </pre>
+  <hr style="width:89%; margin-left:0px;"/>
+ <div id="privacy">
    <h2>Data protection</h2>
    <p><a href="https://www.portal.uni-koeln.de/impressum.html?L=0">Impressum</a></p>
    <p> This site uses cookies to save settings related to dictionary displays.
@@ -555,7 +565,7 @@ entstanden:
   </div>
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
-   <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:dpatel2@uni-koeln.de">Dr. Dhaval Patel</a> maintain this web site.
+   <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:drdhaval2785@gmail.com">Dr. Dhaval Patel</a> maintain this web site.
    <p>Last modified: {0}</p>
   </div>
 
