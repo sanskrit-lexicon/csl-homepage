@@ -107,7 +107,7 @@ def purpos1ediv():
    <p>
      Welcome to the Sanskrit lexicons prepared since 1994 by the Institute of Indology and Tamil Studies, Cologne University.
    <br/>
-  The 37 dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1976).
+  The 38 dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1976).
   <br/>
   Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
   <br/>
@@ -518,7 +518,7 @@ def index01(filein,fileout):
  <p>Die mit * gekennzeichneten Werke sind unter dem
 DFG-NEH Project 2010-2013 <br/>
 entstanden:
- 26*/37 digitalisierte Wörterbücher = *198/300 MB   
+ 26*/38 digitalisierte Wörterbücher = *198/300 MB   
  </p>
 -->
 <hr style="width:89%; margin-left:0px;"/>
