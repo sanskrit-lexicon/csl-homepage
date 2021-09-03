@@ -107,7 +107,7 @@ def purpos1ediv():
    <p>
      Welcome to the Sanskrit lexicons prepared since 1994 by the Institute of Indology and Tamil Studies, Cologne University.
    <br/>
-  The 38 dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1976).
+  The 38 dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1993).
   <br/>
   Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
   <br/>
