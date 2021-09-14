@@ -103,7 +103,7 @@ def headerdiv():
     
     <img src="/images/clarin-400x400.png" 
        width="90px" height="90px"
-       title="CLARIN - European Research Infrastructure for Language Resources and Technology" >
+       title="CLARIN - Common Language Resources and Technology Infrastructure &#013; [by European Research Infrastructure Consortium (ERIC)]" >
    </a>
   </div>
   </div> <!-- header-->
