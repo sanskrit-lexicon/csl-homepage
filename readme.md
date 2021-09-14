@@ -5,6 +5,10 @@ This repository contains the code and assets used to construct the
 
 At Cologne, it is the /scans/csl-homepage directory.
 
+The script `update_version.sh` updates ../csl-orig/.version and
+ is used by the next two scripts.
+Thus, it should be run BEFORE the next script.
+
 The script `redo_cologne.sh` :
 * runs a python script `index_cologne.py` which generates `index_cologne.html`
 * copies it to appropriate spot at Cologne.
