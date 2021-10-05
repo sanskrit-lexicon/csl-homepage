@@ -131,7 +131,9 @@ def purpos1ediv():
  -->
     <a href="/cologne/simple/"><b>Simple-Search</b></a>
 	&nbsp; &nbsp;
-   <b>version """ + version + """</b>
+   <b>version """ + version + """</b> 
+   &nbsp; &nbsp;
+   <a href="https://github.com/sanskrit-lexicon/csl-newsletter/"><b>Newsletter</b></a>
    <span style="position:absolute;right:11%">
     Found an error? 
     <a href='csl-doc/build/contrib.html' target="_csldoc">

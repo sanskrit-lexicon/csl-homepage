@@ -13,6 +13,7 @@
     Jul 04, 2019. Added Dr. Dhaval Patel as maintainer on home page.
     Aug 27 2021. Added citation and bibliographic reference.
     Aug 27 2021. Added version number.
+    Oct 5, 2021. Add Newsletter link.
 """
 from __future__ import print_function
 import sys,codecs
@@ -149,6 +150,8 @@ def purpos1ediv():
 <a href="//sanskrit-lexicon.uni-koeln.de/simple/"><b>Simple-Search</b></a>
 	&nbsp; &nbsp;
    <b>version """ + version + """</b>
+   &nbsp; &nbsp;
+   <a href="https://github.com/sanskrit-lexicon/csl-newsletter/"><b>Newsletter</b></a>
    <span style="position:absolute;right:11%">
     Found an error? 
     <a href='/scans/csldev/csldoc/build/contrib.html' target="_csldoc">
