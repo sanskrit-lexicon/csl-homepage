@@ -451,8 +451,9 @@ def deprecated(pfxdict):
  lines.append(dl('/scans/WILScan/web/index.php','Wilson Sanskrit-English Dictionary, semi-digitized edition, 2008'))
  # removed next 09-23-2019
  #lines.append(dl('/aequery/index.html','Apte English-Sanskrit Dictionary, 2007'))
- lines.append(dl('/scans/PWGScan/disp2/index.php','Boehtlingk &amp; Roth Sanskrit-German Dictionary, 2011'))
- lines.append(dl('/scans/PWScan/disp2/index.php','Boehtlingk + Schmidt Sanskrit-German Dictionary, 2012'))
+ # removed next 10-12-2022
+ #lines.append(dl('/scans/PWGScan/disp2/index.php','Boehtlingk &amp; Roth Sanskrit-German Dictionary, 2011'))
+ #lines.append(dl('/scans/PWScan/disp2/index.php','Boehtlingk + Schmidt Sanskrit-German Dictionary, 2012'))
 
  return lines
 
@@ -474,7 +475,10 @@ def misc():
  lines.append(dl('/scans/csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"))
  #lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
  lines.append(dl('/scans/csl-inflect/web/index.php','MW Inflected forms'))
- lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
+ # removed from homepage 10-12-2022
+ # This depends on a mysql database (lgtab1b) which is not maintained
+ # The program, however, has some interest because it handles prefixed verbs
+ # lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
  lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
  return lines
 
