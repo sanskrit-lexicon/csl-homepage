@@ -19,7 +19,7 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "PUI":True , "PWG":False , "PW":False , "SCH":False,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
-       "LAN":False,"ARMH":False}
+       "LAN":False, "ARMH":False, "LRV":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
@@ -345,6 +345,7 @@ def san_english(pfxdict):
   ("WIL","Wilson Sanskrit-English Dictionary"),
   ("YAT","Yates Sanskrit-English Dictionary"),
   ("LAN","Lanman's Sanskrit Reader Vocabulary"),
+  ("LRV","Vaidya Sanskrit-English Dictionary"),
   # skip these in local installations
   #("AP","Practical Sanskrit-English Dictionary, revised edition"),
   #("PD","An Encyclopedic Dictionary of Sanskrit on Historical Principles")
