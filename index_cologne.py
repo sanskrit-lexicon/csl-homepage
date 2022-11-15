@@ -191,7 +191,8 @@ def dict_line_extralinks(s):
       ('/scans/MWScan/index.php?sfx=pdf','Scanned edition, pdf','S1'),
       ('/scans/MWScan/index.php?sfx=jpg','Scanned edition, jpg','S2'),
       ('/talkMay2008/markingMonier.html','Marking-Monier','Markup'),
-      ('#deprecated','Deprecated','Deprecated')
+      #('#deprecated','Deprecated','Deprecated'),
+      ('/scans/csl-inflect/web/index.php','MW inflected forms','Inflected forms')  ,
       ],
   'AE': [
       ('/scans/AEScan/index.php?sfx=pdf','Scanned edition, pdf','S1'),
