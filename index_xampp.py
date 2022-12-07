@@ -467,6 +467,7 @@ def misc():
  #lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
  #lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
  #lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
+ lines.append(dl('https://dsal.uchicago.edu/dictionaries/pali/','Pali-English Dictionary at DSAL'))
  return lines
 
 def dictdiv(pfxdict):
