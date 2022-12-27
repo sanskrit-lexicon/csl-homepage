@@ -20,3 +20,9 @@ The script `redo_xampp.sh` :
 The url for local installation is:
  http://localhost/cologne/index.html
 
+---------------------------------------
+12-27-2022
+Old: /scans/MWScan/tamil/index.html
+New: /scans/csl-santam/php/index.html
+Remove /cgi-bin/tamil/recherche
+

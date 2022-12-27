@@ -457,7 +457,8 @@ def misc():
   ('csl-kale/disp/index.php','Kale Higher Sanskrit Grammar, 1894 (Scanned)'),
   ('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'),
   ('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"),
-  ('csl-inflect/web/index.php',"MW Inflected forms")
+  ('csl-inflect/web/index.php',"MW Inflected forms"),
+  ('csl-santam/php/index.html','Sanskrit and Tamil  Dictionaries, 2005'),
  ]
  for applink,apptitle in apps:
   # this index_xampp.py file is in csl-homepage, and
