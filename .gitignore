@@ -5,7 +5,5 @@
 # temporary files
 temp*
 old/*
-# outputs that are copied elsewhere. No need for Git to track these
-index_*.html
-#index_xampp.htm*
+index_cologne.html
 
