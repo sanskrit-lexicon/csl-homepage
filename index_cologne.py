@@ -14,6 +14,7 @@
     Aug 27 2021. Added citation and bibliographic reference.
     Aug 27 2021. Added version number.
     Oct 5, 2021. Add Newsletter link.
+    Mar 10, 2023. Remove piwik reference
 """
 from __future__ import print_function
 import sys,codecs
@@ -591,7 +592,6 @@ https://www.sanskrit-lexicon.uni-koeln.de
    <p>Last modified: {0}</p>
   </div>
 
-<script type="text/javascript" src="/js/piwik_analytics.js"></script>
 
 </body>
 </html>

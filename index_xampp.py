@@ -576,9 +576,7 @@ https://www.sanskrit-lexicon.uni-koeln.de
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:drdhaval2785@gmail.com">Dr. Dhaval Patel</a> maintain this web site.
    <p>Last modified: {0} </p>
   </div>
-<!-- skip for local installation
-<script type="text/javascript" src="/js/piwik_analytics.js"></script>
--->
+
 </body>
 </html>
 """.format(today)
