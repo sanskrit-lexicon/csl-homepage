@@ -15,6 +15,7 @@
     Aug 27 2021. Added version number.
     Oct 5, 2021. Add Newsletter link.
     Mar 10, 2023. Remove piwik reference
+    Dec 8, 2023  ABCH
 """
 from __future__ import print_function
 import sys,codecs
@@ -33,7 +34,7 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "PUI":True , "PWG":False , "PW":False , "SCH":False,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
-       "LAN":False,"ARMH":False, "LRV":False}
+       "LAN":False,"ARMH":False, "LRV":False,"ABCH":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
@@ -410,7 +411,8 @@ def san_san(pfxdict):
  pfxs_sandict=[
   ("SKD",""),
   ("VCP",""),
-  ("ARMH","")
+  ("ARMH",""),
+  ("ABCH",""),
  ]
  pfxs=pfxs_sandict
  #section_title='Sanskrit-Sanskrit Dictionaries and Concordances'
