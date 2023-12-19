@@ -473,6 +473,10 @@ def misc():
  #lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
  #lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
  lines.append(dl('https://dsal.uchicago.edu/dictionaries/pali/','Pali-English Dictionary at DSAL'))
+ # 12-19-2023
+ lines.append(dl('http://localhost/cologne/csl-apidev/sample/dalglob1.php','dalglob1: experimental multi-dictionary display'))
+ lines.append(dl('http://localhost/cologne/csl-apidev/pwkvn/','Experimental displays for Böhtlingk/Schmidt dictionaries')) 
+ 
  return lines
 
 def dictdiv(pfxdict):
