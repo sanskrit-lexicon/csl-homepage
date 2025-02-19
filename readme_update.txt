@@ -20,11 +20,17 @@ csl-homepage/readme_update.txt
  # ../csl-orig/.version revised from 2.4.66 to 2.5.0
 -------------------------------------
 02-18-2025
-# local machine
+# ----- local machine
 sh update_version.sh
 sh redo_xampp.sh
 # push to github  (readme_update.txt and index_xampp.html)
 git add .
 git commit -m "update local homepage version 2.7.286."
 git push
+# ----- cologne
+git pull
+sh update_version.sh
+sh redo_cologne.sh
+#  Due to .gitignore, index_cologne.html is not tracked. So no
+#  changes tracked by git.
 
