@@ -1,6 +1,29 @@
 
 csl-homepage/readme_update.txt
 
+
+07-07-2025  AP now public
+1. check entry in indexdirs.xml  (it looks ok)
+2. Revise index_xampp.py
+3. Revise index_cologne.py
+4. revise update_version.sh
+ 4a. majorminor="2.8"
+ 4b. patchbase  1383
+    cd /c/xampp/htdocs/cologne/csl-orig
+    git log | grep '^commit' | wc -l
+    1383
+5. install on xampp server
+ sh update_version.sh  # Script rewrites ../csl-orig/.version 
+ sh redo_xampp.sh
+6. push csl-homepage to github
+
+7. install on cologne server
+ sh update_version.sh  # Script rewrites ../csl-orig/.version 
+ sh redo_cologne.sh 
+
+
+-------------------------------------
+
 12-08-2023  ABCH added.
 1. Add entry into indexdirs.xml
 2. Revise index_xampp.py

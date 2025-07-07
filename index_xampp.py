@@ -215,8 +215,9 @@ def dict_line_extralinks(s):
 def dict_line_links(s):
  """Return list of strings
     June 15: for AP,PD, return special message
+    July 8, 2025  AP now public. 
  """
- if s.pfx in ['AP','PD']:
+ if s.pfx in ['PD']:
   message = "<i>available on special request for research purposes</i>"
   parts = [message]
   return parts
@@ -269,15 +270,15 @@ def dict_line(s,title_in):
  titlelink = "<a href='%s/index.php'>%s</a>" %(basedir,title)
  if s.pfx == 'STC':
   titlelink = "<a href='%s/index_fr.php'>%s</a>" %(basedir,title)
- elif s.pfx == 'AP':
-  basedir1 = "/scans/csl-homepage/ap_pd_samples"
-  titlelink = "<a href='%s/ap-sample.php'>%s</a>" % (basedir1,title)
+ #elif s.pfx == 'AP':
+ # basedir1 = "/scans/csl-homepage/ap_pd_samples"
+ # titlelink = "<a href='%s/ap-sample.php'>%s</a>" % (basedir1,title)
  elif s.pfx == 'PD':
   basedir1 = "/scans/csl-homepage/ap_pd_samples"
   titlelink = "<a href='%s/pd-sample.php'>%s</a>" % (basedir1,title)
 
  style = 'font-size:12pt;'
- if s.pfx in ['MW','AP90']:
+ if s.pfx in ['MW','AP']:
   style = style + 'font-weight:bold;'
  parts.append("  <td width='58%%' style='%s' title='%s,%s,%s pages'>%s</td>" % (style,s.authors,title1,s.textpages,titlelink))
 
@@ -348,7 +349,7 @@ def san_english(pfxdict):
   ("LAN","Lanman's Sanskrit Reader Vocabulary"),
   ("LRV","Vaidya Sanskrit-English Dictionary"),
   # skip these in local installations
-  #("AP","Practical Sanskrit-English Dictionary, revised edition"),
+  ("AP","Practical Sanskrit-English Dictionary, revised edition"),
   #("PD","An Encyclopedic Dictionary of Sanskrit on Historical Principles")
  ]
  section_title='Sanskrit-English Dictionaries'

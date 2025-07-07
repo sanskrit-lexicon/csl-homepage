@@ -17,6 +17,7 @@
     Mar 10, 2023. Remove piwik reference
     Dec 8, 2023  ABCH
     Dec 10, 2023 ACPH, ACSJ
+    Jul8 8, 2025 AP now public
 """
 from __future__ import print_function
 import sys,codecs
@@ -239,7 +240,7 @@ def dict_line_links(s):
  """Return list of strings
     June 15: for AP,PD, return special message
  """
- if s.pfx in ['AP','PD']:
+ if s.pfx in ['PD']:
   message = "<i>available on special request for research purposes</i>"
   parts = [message]
   return parts
@@ -290,15 +291,15 @@ def dict_line(s,title_in):
  titlelink = "<a href='%s/index.php'>%s</a>" %(basedir,title)
  if s.pfx == 'STC':
   titlelink = "<a href='%s/index_fr.php'>%s</a>" %(basedir,title)
- elif s.pfx == 'AP':
-  basedir1 = "/scans/csl-homepage/ap_pd_samples"
-  titlelink = "<a href='%s/ap-sample.php'>%s</a>" % (basedir1,title)
+ #elif s.pfx == 'AP':
+ # basedir1 = "/scans/csl-homepage/ap_pd_samples"
+ # titlelink = "<a href='%s/ap-sample.php'>%s</a>" % (basedir1,title)
  elif s.pfx == 'PD':
   basedir1 = "/scans/csl-homepage/ap_pd_samples"
   titlelink = "<a href='%s/pd-sample.php'>%s</a>" % (basedir1,title)
 
  style = 'font-size:12pt;'
- if s.pfx in ['MW','AP90']:
+ if s.pfx in ['MW','AP']:
   style = style + 'font-weight:bold;'
  parts.append("  <td width='58%%' style='%s' title='%s,%s,%s pages'>%s</td>" % (style,s.authors,title1,s.textpages,titlelink))
 
