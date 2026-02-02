@@ -38,7 +38,7 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
        "LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
-	"ACPH":False, "ACSJ":False "FRI":False}
+        "ACPH":False, "ACSJ":False,"FRI":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
