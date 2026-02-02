@@ -1,6 +1,35 @@
 
 csl-homepage/readme_update.txt
 
+02-02-2025  FRI dictionary available in specialized dictionaries
+1. Add entry for FRI in indexdirs.xml
+2. Revise index_xampp.py
+  - add FRI to san_special 
+3. Revise index_cologne.py
+4. revise update_version.sh 
+ 4a. majorminor="2.8" -> 2.9
+ 4b. patchbase  1538
+    cd /c/xampp/htdocs/cologne/csl-orig
+    git log | grep '^commit' | wc -l
+    1538 <----  change patchbase to this in update_version.sh
+   
+5. install on xampp server
+ sh update_version.sh  # Script rewrites ../csl-orig/.version
+ ===
+STEP 0: majorminor=2.8, patchbase=1383
+STEP 1. UPDATE THE .VERSION FILE
+../csl-orig/.version revised from 2.8.0 to 2.8.155
+STEP 2: RERUN REDO_XAMPP.SH OR REDO_COLOGNE.SH, AS APPROPRIATE
+===
+ sh redo_xampp.sh
+6. push csl-homepage to github
+
+7. install on cologne server
+ sh update_version.sh  # Script rewrites ../csl-orig/.version 
+ sh redo_cologne.sh 
+
+
+-------------------------------------
 
 07-07-2025  AP now public
 1. check entry in indexdirs.xml  (it looks ok)

@@ -17,7 +17,8 @@
     Mar 10, 2023. Remove piwik reference
     Dec 8, 2023  ABCH
     Dec 10, 2023 ACPH, ACSJ
-    Jul8 8, 2025 AP now public
+    Jul 8, 2025 AP now public
+    Feb 2, 2026 FRI added to homepage
 """
 from __future__ import print_function
 import sys,codecs
@@ -37,7 +38,7 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
        "LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
-	"ACPH":False, "ACSJ":False}
+	"ACPH":False, "ACSJ":False "FRI":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
@@ -436,7 +437,8 @@ def san_special(pfxdict):
   ("SNP","Meulenbeld's Sanskrit Names of Plants"),
   ("PGN",""),
   ("IEG",""),
-  ("INM","")
+  ("INM",""),
+  ("FRI",""),
  ]
  section_title = 'Specialized Dictionaries'
  return section_lines(pfxs,section_title,pfxdict)
