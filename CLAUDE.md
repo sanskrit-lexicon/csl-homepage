@@ -4,36 +4,43 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**csl-homepage** generates the [Sanskrit Lexicon homepage](http://www.sanskrit-lexicon.uni-koeln.de/index.html) for both the Cologne server and local XAMPP installations. It reads dictionary metadata and version information from sibling repos and produces the `index.html`.
+**csl-homepage** is a Sanskrit Lexicon **web-frontend** repository — part of the Cologne Digital Sanskrit Lexicon (CDSL) infrastructure.
 
-At Cologne, this repo lives at `/scans/csl-homepage/`.
+## Repo Category
 
-## Architecture
+`web-frontend` — see the [tooling runbook](https://github.com/sanskrit-lexicon/csl-observatory/blob/main/runbook/cologne-tooling-runbook.md) for category-specific conventions.
 
-| File/Directory | Purpose |
-|---|---|
-| `index_cologne.py` | Generates `index_cologne.html` for the Cologne server |
-| `index_xampp.py` / `index_xampp.html` | Generates homepage for local XAMPP installation |
-| `redo_cologne.sh` | Runs `index_cologne.py` and copies output to the Cologne web root |
-| `redo_xampp.sh` | Runs `index_xampp.py` and copies output to local XAMPP web root |
-| `update_version.sh` | Updates `../csl-orig/.version` file; **run this before** either redo script |
-| `indexdirs/` | Directory listing data used by the homepage generator |
-| `indexdirs.xml` | XML index of all dictionary directories |
-| `Cologne.css` | Main stylesheet for the homepage |
-| `ap_pd_samples/` | Sample pages for AP and PD dictionaries |
-| `hack/` | Miscellaneous one-off fix scripts |
+## GitHub Issue Conventions
 
-### Workflow
+This repository uses the **Cologne tooling-repo taxonomy**. All issues must have:
+- **Exactly one type label** (9 options)
+- **Exactly one severity label** (4 levels)
+- **One milestone** (5 options)
 
-```bash
-sh update_version.sh        # always run first
-sh redo_cologne.sh          # for Cologne server deployment
-sh redo_xampp.sh            # for local XAMPP testing
-```
+### Type Labels
+- `bug` — Code defect (wrong output, broken contract)
+- `feature` — Net-new capability
+- `enhancement` — Improvement to existing capability
+- `performance` — Speed, memory, throughput optimization
+- `tech-debt` — Refactoring, cleanup, dependency updates
+- `security` — CVE, auth issue, credential exposure
+- `documentation` — Prose docs, API docs, comments
+- `infrastructure` — CI/CD, deploy, data pipelines, build tooling
+- `question` — Research, proposals, open discussions
 
-Local URL: `http://localhost/cologne/index.html`
+### Severity Labels
+- `trivial` — Cosmetic, < 1 hour
+- `minor` — Single function/component
+- `major` — Multiple files, design decision
+- `critical` — Blocks users, data loss/security CVE
 
-## Dependencies
+### Milestones
+- **API Stability** — performance, security, regressions
+- **User Experience** — bugs, features, enhancements
+- **Data Quality** — data-pipeline issues, integrity
+- **Developer Experience** — tech-debt, infrastructure, docs
+- **Community** — questions, proposals, discussions
 
-- **Python 3**
-- **csl-orig** sibling repo — `.version` file updated by `update_version.sh`
+## Cross-Repo Coordination
+
+The org-level project [Tooling Roadmap](https://github.com/orgs/sanskrit-lexicon/projects/9) tracks tool work across all repositories.
