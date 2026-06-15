@@ -137,6 +137,8 @@ def purpos1ediv():
 
    <p>
      <a href='/scans/csldev/csldoc/build/index.html' target="_csldoc"><b>Documentation</b></a>
+   &nbsp; &nbsp;
+     <a href='https://sanskrit-lexicon.github.io/csl-guides/' target="_cslguides"><b>Guides</b></a>
    
 <!--
    &nbsp; &nbsp;
