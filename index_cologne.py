@@ -37,8 +37,8 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "PUI":True , "PWG":False , "PW":False , "SCH":False,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
-       "LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
-        "ACPH":False, "ACSJ":False,"FRI":False}
+"LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
+         "ACPH":False, "ACSJ":False,"NMMB":False,"FRI":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
@@ -421,6 +421,7 @@ def san_san(pfxdict):
   ("ABCH",""),
   ("ACPH",""),
   ("ACSJ",""),
+  ("NMMB",""),
  ]
  pfxs=pfxs_sandict
  #section_title='Sanskrit-Sanskrit Dictionaries and Concordances'
