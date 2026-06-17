@@ -1,8 +1,8 @@
-majorminor="2.9"  # major and minor part of semantic version.
+majorminor="2.10"  # major and minor part of semantic version.
 # minor number is same as number of dictionaries added to
 # the base collection developed at Cologne.
 # LAN, ARMH, PWKVN, LRV, ABCH, ACPH, ACSJ, FRI
-patchbase=1538
+patchbase=2034
 echo "STEP 0: majorminor=$majorminor, patchbase=$patchbase"
 # patchbase. This is number of csl-orig commits at time majorminor changed.
 # We can compute this (in csl-orig) initially by this command in csl-orig
