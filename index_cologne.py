@@ -21,7 +21,7 @@
     Feb 2, 2026 FRI added to homepage
 """
 from __future__ import print_function
-import sys,codecs
+import sys
 import re
 import os
 import xml.etree.cElementTree as ET
@@ -42,7 +42,7 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
- with codecs.open(versionFile, 'r', 'utf-8') as fin:
+ with open(versionFile, 'r', encoding='utf-8') as fin:
    return fin.read().rstrip()
 
 version = get_version()
@@ -121,55 +121,55 @@ def headerdiv():
  lines = div.split('\n\r')
  return lines
 
-def purpos1ediv():
+def purpos1ediv(count):
 
  div ="""
  <div id="purpose1">
    <p>
      Welcome to the Sanskrit lexicons prepared since 1994 by the Institute of Indology and Tamil Studies, Cologne University.
    <br/>
-  The 42 dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1993).
-  <br/>
-  Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
-  <br/>
-  All dictionaries are also available for offline usage in android phones via <a href="https://play.google.com/store/apps/details?id=sanskritcode.sanskritdictionaryupdater&hl=en" target="_blank">this application</a>. It presumes that some form of stardict viewer is installed on your phone. You may try to install stardict viewer by searching for EBdic, colordict, goldendict or stardict.
-  </p>
+  The {count} dictionaries are organized primarily by the secondary language (English, German, etc.), and then by date of publication (1832 till 1993).
+   <br/>
+   Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
+   <br/>
+   All dictionaries are also available for offline usage in android phones via <a href="https://play.google.com/store/apps/details?id=sanskritcode.sanskritdictionaryupdater&hl=en" target="_blank">this application</a>. It presumes that some form of stardict viewer is installed on your phone. You may try to install stardict viewer by searching for EBdic, colordict, goldendict or stardict.
+   </p>
 
-   <p>
-     <a href='/scans/csldev/csldoc/build/index.html' target="_csldoc"><b>Documentation</b></a>
-   &nbsp; &nbsp;
-     <a href='https://sanskrit-lexicon.github.io/csl-guides/' target="_cslguides"><b>Guides</b></a>
-   
+    <p>
+      <a href='/scans/csldev/csldoc/build/index.html' target="_csldoc"><b>Documentation</b></a>
+    &nbsp; &nbsp;
+      <a href='https://sanskrit-lexicon.github.io/csl-guides/' target="_cslguides"><b>Guides</b></a>
+    
 <!--
-   &nbsp; &nbsp;
-     <b>New Displays: </b> &nbsp;
-    <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/sample/list-0.2.html">(Dec 2016)</a>
-   &nbsp; 
-    <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/simple-search/v1.0/list-0.2s.html">(Dec 2017)</a>
+    &nbsp; &nbsp;
+      <b>New Displays: </b> &nbsp;
+     <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/sample/list-0.2.html">(Dec 2016)</a>
+    &nbsp; 
+     <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/simple-search/v1.0/list-0.2s.html">(Dec 2017)</a>
 -->
-   &nbsp; &nbsp;
+    &nbsp; &nbsp;
 <!--
-    <a href="/scans/awork/apidev/simple-search/v1.0/list-0.2s.html"><b>Simple-Search</b></a>
+     <a href="/scans/awork/apidev/simple-search/v1.0/list-0.2s.html"><b>Simple-Search</b></a>
 -->
 <!-- make use of rewrite-rule -->
 <!-- this adds www at Cologne
-    <a href="/simple/"><b>Simple-Search</b></a>
+     <a href="/simple/"><b>Simple-Search</b></a>
 -->
-<a href="//sanskrit-lexicon.uni-koeln.de/simple/"><b>Simple-Search</b></a>
-	&nbsp; &nbsp;
-   <b>version """ + version + """</b>
-   &nbsp; &nbsp;
-   <a href="https://github.com/sanskrit-lexicon/csl-newsletter/"><b>Newsletter</b></a>
-   <span style="position:absolute;right:11%">
-    Found an error? 
-    <a href='/scans/csldev/csldoc/build/contrib.html' target="_csldoc">
-      <b>Help us on <img src="/images/github-9-16.gif">GitHub</b>
-    </a>
-   </span>
-   </p> 
+ <a href="//sanskrit-lexicon.uni-koeln.de/simple/"><b>Simple-Search</b></a>
+ 	&nbsp; &nbsp;
+    <b>version {version}</b>
+    &nbsp; &nbsp;
+    <a href="https://github.com/sanskrit-lexicon/csl-newsletter/"><b>Newsletter</b></a>
+    <span style="position:absolute;right:11%">
+     Found an error? 
+     <a href='/scans/csldev/csldoc/build/contrib.html' target="_csldoc">
+       <b>Help us on <img src="/images/github-9-16.gif">GitHub</b>
+     </a>
+    </span>
+    </p> 
 
-  </div>
-"""
+   </div>
+""".format(count=count, version=version)
  #lines = string.split(div, '\n\r') 
  lines = div.split('\n\r')
  return lines
@@ -520,7 +520,7 @@ def dictdiv(pfxdict):
 
 def index01_bodylines(pfxdict):
  # use '+' on lists to concatenate them
- lines=headerdiv() + purpos1ediv() + dictdiv(pfxdict) 
+ lines=headerdiv() + purpos1ediv(len(pfxdict) - 1) + dictdiv(pfxdict) 
  return lines
 
 def index01(filein,fileout):
@@ -622,7 +622,7 @@ https://www.sanskrit-lexicon.uni-koeln.de
  for line in taillines:
   lines.append(line)
 
- fout = codecs.open(fileout,"w","utf-8")
+ fout = open(fileout,"w",encoding="utf-8")
  for line in lines:
   fout.write("%s\n" % line)
  fout.close()
