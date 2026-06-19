@@ -1,0 +1,13 @@
+THIRD-PARTY NOTICE
+==================
+
+The license files in this repository — `LICENSE` (CC-BY-SA-4.0) for content and
+`licenses/GPL-3.0.txt` (GPL-3.0) for source code — cover this project's own
+materials only.
+
+The following are THIRD-PARTY assets. They are NOT licensed by this repository
+and are NOT covered by the licenses above; they remain the property of their
+respective owners and may not be reused without permission:
+
+- `cologne_univ_seal.gif` — University of Cologne institutional seal / trademark.
+- `clarin-400x400.png` — CLARIN logo / trademark.
