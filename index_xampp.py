@@ -133,7 +133,7 @@ def purpos1ediv(count):
    <br/>
    Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
    <br/>
-   All dictionaries are also available for offline usage in android phones via <a href="https://play.google.com/store/apps/details?id=sanskritcode.sanskritdictionaryupdater&hl=en" target="_blank">this application</a>. It presumes that some form of stardict viewer is installed on your phone. You may try to install stardict viewer by searching for EBdic, colordict, goldendict or stardict.
+  <a href="https://sanskrit-lexicon.github.io/csl-app/">Offline Web App</a>.  <a href="https://apps.apple.com/in/app/cologne-sanskrit-lexicon/id6760785804">iOS / macOS app</a>. <a href="https://play.google.com/apps/testing/de.uni_koeln.sanskrit_lexicon">Android App</a>. (For android app, drop a mail to <a href="mailto:drdhaval2785@gmail.com">drdhaval2785@gmail.com</a> for access, as it is still under testing).
    </p>
 
     <p>
