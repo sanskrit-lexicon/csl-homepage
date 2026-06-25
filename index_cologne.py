@@ -126,6 +126,9 @@ def purpos1ediv(count):
 
  div ="""
  <div id="purpose1">
+   <p style="color:red; font-weight:bold; border:2px solid red; padding:10px;">
+     Dear users, We are experiencing some technical issues and some dictionaries may not work as expected. We are working on the issue. Will try to restore the dictionaries as soon as possible. Thank you for your patience.
+   </p>
    <p>
      Welcome to the Sanskrit lexicons prepared since 1994 by the Institute of Indology and Tamil Studies, Cologne University.
    <br/>
