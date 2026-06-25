@@ -1,6 +1,25 @@
 # coding=utf-8
-""" index_xampp.py 
+""" index_xampp.py  Begun July 9, 2014, 
     Make Sanskrit-Lexicon home page FOR local installations.
+    Use indexdirs.xml
+    Revised June 5, 2015
+    Revised June 23, 2015
+    Revised Dec 13, 2016 - Add new apidev display
+    Dec 21, 2017. Added 'simple' display
+    Jan 31, 2018. Moved BHS from san_english to san_special
+                  Tamil Lexicon
+    May 31, 2018. Add privacy notice section
+    Jun 12, 2018. Add Impressum link in privacy section
+    Jul 04, 2019. Added Dr. Dhaval Patel as maintainer on home page.
+    Aug 27 2021. Added citation and bibliographic reference.
+    Aug 27 2021. Added version number.
+    Oct 5, 2021. Add Newsletter link.
+    Mar 10, 2023. Remove piwik reference
+    Dec 8, 2023  ABCH
+    Dec 10, 2023 ACPH, ACSJ
+    Jul 8, 2025 AP now public
+    Feb 2, 2026 FRI added to homepage
+    Jun 16, 2026 NMMB added to homepage
 """
 from __future__ import print_function
 import sys
@@ -19,8 +38,8 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "PUI":True , "PWG":False , "PW":False , "SCH":False,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
-       "LAN":False, "ARMH":False, "LRV":False, "ABCH":False,
-	        "ACPH":False, "ACSJ":False, "NMMB":False, "FRI":False,}
+"LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
+         "ACPH":False, "ACSJ":False,"NMMB":False,"FRI":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
@@ -70,6 +89,7 @@ def parse_indexdirs(filein):
   d[rec.pfx]=rec
  return d
 
+
 def headerdiv():
  """ Aug 1, 2018. clarin logo.
    Changed to use flexbox.
@@ -91,7 +111,7 @@ def headerdiv():
     
     <img src="csl-homepage/clarin-400x400.png" 
        width="90px" height="90px"
-       title="CLARIN - Common Language Resources and Technology Infrastructure &#013; [by European Research Infrastructure Consortium (ERIC)]">
+       title="CLARIN - Common Language Resources and Technology Infrastructure &#013; [by European Research Infrastructure Consortium (ERIC)]" >
    </a>
   </div>
   </div> <!-- header-->
@@ -103,6 +123,7 @@ def headerdiv():
  return lines
 
 def purpos1ediv(count):
+
  div ="""
  <div id="purpose1">
    <p>
@@ -117,22 +138,27 @@ def purpos1ediv(count):
 
     <p>
       <a href='csl-doc/build/index.html' target="_csldoc"><b>Documentation</b></a>
-  <!--
+    &nbsp; &nbsp;
+      <a href='https://sanskrit-lexicon.github.io/csl-guides/' target="_cslguides"><b>Guides</b></a>
+    
+<!--
     &nbsp; &nbsp;
       <b>New Displays: </b> &nbsp;
      <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/sample/list-0.2.html">(Dec 2016)</a>
     &nbsp; 
      <a href="//www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/simple-search/v1.0/list-0.2s.html">(Dec 2017)</a>
-  -->
+-->
     &nbsp; &nbsp;
 <!--
-    <a href="csl-apidev/simple-search/v1.0/list-0.2s_xampp.html"><b>Simple-Search</b></a>
+     <a href="/scans/awork/apidev/simple-search/v1.0/list-0.2s.html"><b>Simple-Search</b></a>
 -->
-<!-- make use of .htaccess rewrite. In xampp, .htaccess is in /cologne/
- -->
-     <a href="/cologne/simple/"><b>Simple-Search</b></a>
+<!-- make use of rewrite-rule -->
+<!-- this adds www at Cologne
+     <a href="/simple/"><b>Simple-Search</b></a>
+-->
+ <a href="/cologne/simple/"><b>Simple-Search</b></a>
  	&nbsp; &nbsp;
-    {version_tag} 
+    <b>version {version}</b>
     &nbsp; &nbsp;
     <a href="https://github.com/sanskrit-lexicon/csl-newsletter/"><b>Newsletter</b></a>
     <span style="position:absolute;right:11%">
@@ -144,7 +170,7 @@ def purpos1ediv(count):
     </p> 
 
    </div>
-""".format(count=count, version_tag='<b>version ' + version + '</b>')
+""".format(count=count, version=version)
  #lines = string.split(div, '\n\r') 
  lines = div.split('\n\r')
  return lines
@@ -174,7 +200,8 @@ def dict_line_extralinks(s):
       ('/scans/MWScan/index.php?sfx=pdf','Scanned edition, pdf','S1'),
       ('/scans/MWScan/index.php?sfx=jpg','Scanned edition, jpg','S2'),
       ('/talkMay2008/markingMonier.html','Marking-Monier','Markup'),
-      ('#deprecated','Deprecated','Deprecated')
+      #('#deprecated','Deprecated','Deprecated'),
+      ('/scans/csl-inflect/web/index.php','MW inflected forms','Inflected forms')  ,
       ],
   'AE': [
       ('/scans/AEScan/index.php?sfx=pdf','Scanned edition, pdf','S1'),
@@ -203,7 +230,8 @@ def dict_line_extralinks(s):
       ('/scans/STCScan/web/index_fr.php',u'semi-numérique','SD'),
       ],
   'PGN':[
-      ('/scans/PGNScan/2014/web/webscan/index.php','Scanned edition','S')
+      #('/scans/PGNScan/2014/web/webscan/index.php','Scanned edition','S')
+      ('/scans/PGNScan/2014/webscan/index.php','Scanned edition','S')
       ]
  }
 
@@ -215,15 +243,14 @@ def dict_line_extralinks(s):
 def dict_line_links(s):
  """Return list of strings
     June 15: for AP,PD, return special message
-    July 8, 2025  AP now public. 
  """
  if s.pfx in ['PD']:
   message = "<i>available on special request for research purposes</i>"
   parts = [message]
   return parts
  # usual case : links to various displays
- #basedir = "/scans/%sScan/%s/web" % (s.pfx,s.year)
  basedir = "%s/web" % s.pfx.lower()
+
  data = [
   ('%s/webtc/indexcaller.php' % basedir,'Basic Display','B'),
   ('%s/webtc1/index.php' % basedir,'List Display','L'),
@@ -242,8 +269,7 @@ def dict_line_links(s):
 
  parts = make_links(data)
  for link in dict_line_extralinks(s):
-  pass  # skip these in local installation
-  #parts.append(link)
+  parts.append(link)
  return parts
 
 
@@ -265,8 +291,7 @@ def dict_line(s,title_in):
  parts.append("  <td width='6%%'><span style='font-size:10px;'>%s</span></td>" % pfx1)
  parts.append("  <td width='6%%'><span style='font-size:10px;'>%s</span></td>" % s.textdate)
 
- #basedir = "/scans/%sScan/%s/web" % (s.pfx,s.year)
- basedir = "%s/web" %s.pfx.lower()
+ basedir = "%s/web" % s.pfx.lower()
  titlelink = "<a href='%s/index.php'>%s</a>" %(basedir,title)
  if s.pfx == 'STC':
   titlelink = "<a href='%s/index_fr.php'>%s</a>" %(basedir,title)
@@ -348,9 +373,8 @@ def san_english(pfxdict):
   ("YAT","Yates Sanskrit-English Dictionary"),
   ("LAN","Lanman's Sanskrit Reader Vocabulary"),
   ("LRV","Vaidya Sanskrit-English Dictionary"),
-  # skip these in local installations
   ("AP","Practical Sanskrit-English Dictionary, revised edition"),
-  #("PD","An Encyclopedic Dictionary of Sanskrit on Historical Principles")
+  ("PD","An Encyclopedic Dictionary of Sanskrit on Historical Principles")
  ]
  section_title='Sanskrit-English Dictionaries'
  return section_lines(pfxs,section_title,pfxdict)
@@ -439,12 +463,13 @@ def deprecated(pfxdict):
  lines.append(dl('/monier/indexcaller.php','Monier-Williams Sanskrit-English Dictionary, 2008'))
  # removed next 09-23-2019
  #lines.append(dl('/mwquery/index.html','Monier-Williams Advanced Search, 2008'))
- lines.append(dl('/scans/MWScan/tamil/index.html','Sanskrit and Tamil  Dictionaries, 2005'))
+ lines.append(dl('/scans/csl-santam/php/index.html','Sanskrit and Tamil  Dictionaries, 2005'))
  lines.append(dl('/scans/WILScan/web/index.php','Wilson Sanskrit-English Dictionary, semi-digitized edition, 2008'))
  # removed next 09-23-2019
  #lines.append(dl('/aequery/index.html','Apte English-Sanskrit Dictionary, 2007'))
- lines.append(dl('/scans/PWGScan/disp2/index.php','Boehtlingk &amp; Roth Sanskrit-German Dictionary, 2011'))
- lines.append(dl('/scans/PWScan/disp2/index.php','Boehtlingk + Schmidt Sanskrit-German Dictionary, 2012'))
+ # removed next 10-12-2022
+ #lines.append(dl('/scans/PWGScan/disp2/index.php','Boehtlingk &amp; Roth Sanskrit-German Dictionary, 2011'))
+ #lines.append(dl('/scans/PWScan/disp2/index.php','Boehtlingk + Schmidt Sanskrit-German Dictionary, 2012'))
 
  return lines
 
@@ -456,30 +481,25 @@ def misc():
  lines.append('<tr style="background:#FFFFCC"><td colspan="%s"><h2>%s</h2></td></tr>' % (colspan,section_title))
  def dl(h,t): # for convenience
   return deprecated_line(h,t)
- # add these modules if they are installed
- # detect installation by whether the php program file exists.
- # Idea: We could use the Cologne installation if local installation does not
- # exist
- apps = [
-  ('csl-kale/disp/index.php','Kale Higher Sanskrit Grammar, 1894 (Scanned)'),
-  ('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'),
-  ('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"),
-  ('csl-inflect/web/index.php',"MW Inflected forms"),
-  ('csl-santam/php/index.html','Sanskrit and Tamil  Dictionaries, 2005'),
- ]
- for applink,apptitle in apps:
-  # this index_xampp.py file is in csl-homepage, and
-  # the the app directories of siblings of csl-homepage. Hence "../" needed.
-  if os.path.exists("../"+applink):
-   lines.append(dl(applink,apptitle))
+ #lines.append(dl('/scans/KALEScan/disp1/index1.php?sfx=png','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
+ lines.append(dl('csl-kale/disp/index.php','Kale Higher Sanskrit Grammar, 1894 (Scanned)'))
+
+ #lines.append(dl('/scans/MWScan/Westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
+ lines.append(dl('csl-westergaard/disp/index.php','Westergaard Linguae Sanscritae, 1841 (Scanned)'))
+
+ #lines.append(dl('/scans/KALEScan/WRScan/disp2/index.php',"Whitney's Roots, 1885 (Scanned)"))
+ lines.append(dl('csl-whitroot/disp/index.php',"Whitney's Roots, 1885 (Scanned)"))
  #lines.append(dl('/work/fflexphp/web/index.php','MW Inflected forms'))
- #lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
- #lines.append(dl('/tamildictionaries/index.html','Tamil Lexicon'))
+ lines.append(dl('csl-inflect/web/index.php','MW Inflected forms'))
+ # removed from homepage 10-12-2022
+ # This depends on a mysql database (lgtab1b) which is not maintained
+ # The program, however, has some interest because it handles prefixed verbs
+ # lines.append(dl('/work/fflexphp/web1/index.php','MW Inflected forms, v2'))
+ lines.append(dl('tamildictionaries/index.html','Tamil Lexicon'))
  lines.append(dl('https://dsal.uchicago.edu/dictionaries/pali/','Pali-English Dictionary at DSAL'))
  # 12-19-2023
- lines.append(dl('http://localhost/cologne/csl-apidev/sample/dalglob1.php','dalglob1: experimental multi-dictionary display'))
- lines.append(dl('http://localhost/cologne/csl-apidev/pwkvn/','Experimental displays for Böhtlingk/Schmidt dictionaries')) 
- 
+ lines.append(dl('csl-apidev/sample/dalglob1.php','dalglob1: experimental multi-dictionary display')) 
+ lines.append(dl('csl-apidev/pwkvn/','Experimental displays for Böhtlingk/Schmidt dictionaries')) 
  return lines
 
 def dictdiv(pfxdict):
@@ -491,10 +511,8 @@ def dictdiv(pfxdict):
   san_french(pfxdict), san_german(pfxdict),
   san_latin(pfxdict), san_san(pfxdict),
   san_special(pfxdict),
-  # skip these for local installation
-  #deprecated(pfxdict),
-  misc()
-  ]
+  deprecated(pfxdict),
+  misc()]
  for part in parts:
   ans = ans + ['<tr><td>'] + part + ['</td></tr>']
  ans.append('</table>')
@@ -508,12 +526,15 @@ def index01_bodylines(pfxdict):
 
 def index01(filein,fileout):
  pfxdict = parse_indexdirs(filein)
- #print(pfxdict["PW"].toStringdbg())
+ #print pfxdict["PW"].toStringdbg().encode('utf-8')
 
  lines = [] # array of lines to be output
+ #head = """<?xml version="1.0" encoding="UTF-8"?>
+ # Aug 21, 2015. Change to HTML5
  import datetime
  today0 = datetime.datetime.now()
  today = today0.strftime("%B %d, %Y")
+
  head = """<!DOCTYPE html>
 <html>
 <head>
@@ -542,12 +563,12 @@ entstanden:
   <p>The digitizations of works marked with an asterisk (*) were funded by the DFG-NEH Project 2010-2013.</p>
   </p>
      <p>The markup of the  Monier-Williams Sanskrit-English Dictionary is described in detail 
-          <a href='https://www.sanskrit-lexicon.uni-koeln.de/talkMay2008/markingMonier.html'>here</a>.
+          <a href='talkMay2008/markingMonier.html'>here</a>.
      <br/>
      The markup of the various dictionaries was designed and implemented by: </p>
      <ul>
       <li>
-       <a href="mailto:th.malten@gmail.com">Thomas Malten</a> (Cologne University) and <a href="https://www.sanskrit-lexicon.uni-koeln.de/images/Aurorachana_Staff_2006(1).jpg">assistants</a> in India
+       <a href="mailto:th.malten@gmail.com">Thomas Malten</a> (Cologne University) and <a href="csl-homepage/Aurorachana_Staff_2006(1).jpg">assistants</a> in India
       </li>
       <li>
        <a href="//www.sanskritlibrary.org">Peter Scharf</a> (The Sanskrit Library)
@@ -560,7 +581,7 @@ entstanden:
        Jim Funderburk
       </li>
      </ul>
-<hr style="width:89%; margin-left:0px;"/>
+  <hr style="width:89%; margin-left:0px;"/>
    <h2>How to cite in academic publications?</h2>
    <h3>In text citation</h3>
   <p>(Cologne Digital Sanskrit Dictionaries)</p>
@@ -573,7 +594,7 @@ https://www.sanskrit-lexicon.uni-koeln.de
    <h2>How to acknowledge usage of data in a website / application?</h2>
    <p>This website / application uses data from <a href="https://www.sanskrit-lexicon.uni-koeln.de">Cologne Digital Sanskrit Dictionaries</a>, Cologne University, accessed on {0}.</p>
   <hr style="width:89%; margin-left:0px;"/>
-  <div id="privacy">
+ <div id="privacy">
    <h2>Data protection</h2>
    <p><a href="https://www.portal.uni-koeln.de/impressum.html?L=0">Impressum</a></p>
    <p> This site uses cookies to save settings related to dictionary displays.
@@ -585,8 +606,9 @@ https://www.sanskrit-lexicon.uni-koeln.de
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:drdhaval2785@gmail.com">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: {0} </p>
+   <p>Last modified: {0}</p>
   </div>
+
 
 </body>
 </html>
