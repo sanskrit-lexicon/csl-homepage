@@ -38,8 +38,8 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "PUI":True , "PWG":False , "PW":False , "SCH":False,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
-"LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
-         "ACPH":False, "ACSJ":False,"NMMB":False,"FRI":False}
+       "LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
+       "ACPH":False, "ACSJ":False,"NMMB":False,"FRI":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
@@ -126,10 +126,10 @@ def purpos1ediv(count):
 
  div ="""
  <div id="purpose1">
-   <p style="color:red; font-weight:bold; border:2px solid red; padding:10px;">
+   <!--<p style="color:red; font-weight:bold; border:2px solid red; padding:10px;">
      Dear users, We are experiencing some technical issues and some dictionaries may not work as expected. We are working on the issue. Will try to restore the dictionaries as soon as possible. Thank you for your patience.
      You may try <a href="https://sanskrit-lexicon.github.io/csl-app/">Web App</a> in the interim.
-   </p>
+   </p>-->
    <p>
      Welcome to the Sanskrit lexicons prepared since 1994 by the Institute of Indology and Tamil Studies, Cologne University.
    <br/>
