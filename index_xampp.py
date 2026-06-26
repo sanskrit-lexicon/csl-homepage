@@ -126,7 +126,7 @@ def purpos1ediv(count):
 
  div ="""
  <div id="purpose1">
-   !--<p style="color:red; font-weight:bold; border:2px solid red; padding:10px;">
+   <!--<p style="color:red; font-weight:bold; border:2px solid red; padding:10px;">
      Dear users, We are experiencing some technical issues and some dictionaries may not work as expected. We are working on the issue. Will try to restore the dictionaries as soon as possible. Thank you for your patience.
      You may try <a href="https://sanskrit-lexicon.github.io/csl-app/">Web App</a> in the interim.
    </p>-->
