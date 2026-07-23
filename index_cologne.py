@@ -468,7 +468,8 @@ def deprecated(pfxdict):
  # removed next 09-23-2019
  #lines.append(dl('/mwquery/index.html','Monier-Williams Advanced Search, 2008'))
  lines.append(dl('/scans/csl-santam/php/index.html','Sanskrit and Tamil  Dictionaries, 2005'))
- lines.append(dl('/scans/WILScan/web/index.php','Wilson Sanskrit-English Dictionary, semi-digitized edition, 2008'))
+ # removed 23-07-2026 (WIL#14): semi-digitized WIL 2008 returns HTTP 500; current WIL is main-table wil/web/
+ #lines.append(dl('/scans/WILScan/web/index.php','Wilson Sanskrit-English Dictionary, semi-digitized edition, 2008'))
  # removed next 09-23-2019
  #lines.append(dl('/aequery/index.html','Apte English-Sanskrit Dictionary, 2007'))
  # removed next 10-12-2022
