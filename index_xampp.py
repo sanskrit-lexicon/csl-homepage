@@ -20,6 +20,7 @@
     Jul 8, 2025 AP now public
     Feb 2, 2026 FRI added to homepage
     Jun 16, 2026 NMMB added to homepage
+    Oct 13, 2026 NYBJ added to homepage
 """
 from __future__ import print_function
 import sys
@@ -39,7 +40,8 @@ asteriskData = {"ACC":True , "AE":False , "AP":False , "AP90":True,
        "SHS":False , "SKD":True , "SNP":True , "STC":True,
        "VCP":True , "VEI":True , "WIL":False , "YAT":True,
        "LAN":False,"ARMH":False, "LRV":False,"ABCH":False,
-       "ACPH":False, "ACSJ":False,"NMMB":False,"FRI":False}
+       "ACPH":False, "ACSJ":False,"NMMB":False,"FRI":False,
+       "NYBJ":False}
 
 def get_version():
  versionFile = os.path.join('..', 'csl-orig', '.version')
@@ -137,7 +139,7 @@ def purpos1ediv(count):
    <br/>
    Each dictionary has several types of display (B L A M), as well as PDF scan and XML (in <a href="https://en.wikipedia.org/wiki/SLP1">SLP1</a>) files for download (D).
    <br/>
-  <a href="https://sanskrit-lexicon.github.io/csl-app/">Offline Web App</a>.  <a href="https://apps.apple.com/in/app/cologne-sanskrit-lexicon/id6760785804">iOS / macOS app</a>. <a href="https://play.google.com/apps/testing/de.uni_koeln.sanskrit_lexicon">Android App</a>. (For android app, drop a mail to <a href="mailto:drdhaval2785@gmail.com">drdhaval2785@gmail.com</a> for access, as it is still under testing).
+  <a href="https://sanskrit-lexicon.github.io/csl-app/">Offline Web App</a>.  <a href="https://apps.apple.com/in/app/cologne-sanskrit-lexicon/id6760785804">iOS / macOS app</a>. <a href="https://play.google.com/store/apps/details?id=de.uni_koeln.sanskrit_lexicon">Android App</a>.
    </p>
 
     <p>
@@ -427,6 +429,7 @@ def san_san(pfxdict):
   ("ACPH",""),
   ("ACSJ",""),
   ("NMMB",""),
+  ("NYBJ",""),
  ]
  pfxs=pfxs_sandict
  #section_title='Sanskrit-Sanskrit Dictionaries and Concordances'
