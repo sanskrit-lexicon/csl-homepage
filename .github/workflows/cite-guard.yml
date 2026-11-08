@@ -1,0 +1,14 @@
+name: cite-guard
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  cite-dois:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Umbrella DOI present in generators + committed page
+        run: python3 scripts/check_cite_dois.py

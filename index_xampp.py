@@ -597,6 +597,7 @@ entstanden:
   <pre>
 Cologne Digital Sanskrit Dictionaries, version """ + version + """,
 Cologne University, accessed on {0},
+DOI 10.5281/zenodo.21319331 (https://doi.org/10.5281/zenodo.21319331)
 https://www.sanskrit-lexicon.uni-koeln.de
   </pre>
    <h2>How to acknowledge usage of data in a website / application?</h2>
