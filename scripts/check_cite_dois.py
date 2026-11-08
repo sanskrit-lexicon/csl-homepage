@@ -11,6 +11,7 @@ This guard fails loud unless the DOI line is present in ALL of:
   1. index_xampp.py   (generator template — the fix point)
   2. index_cologne.py (generator template — the uni-koeln regen path)
   3. index_xampp.html (the committed, deployed artifact)
+  4. cite.html        (the standalone uni-koeln cite page)
 Date- and version-agnostic: it checks presence, not a byte regen diff (the
 "accessed on" date changes on every legitimate regen).
 """
@@ -27,6 +28,7 @@ SURFACES = [
     "index_xampp.py",
     "index_cologne.py",
     "index_xampp.html",
+    "cite.html",
 ]
 
 
