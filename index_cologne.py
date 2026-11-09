@@ -533,6 +533,40 @@ def index01_bodylines(pfxdict):
  lines=headerdiv() + purpos1ediv(len(pfxdict) - 1) + dictdiv(pfxdict) 
  return lines
 
+def og_meta_tags(count):
+ """H7901: og:/twitter: meta for the generated homepage (index_cologne.html,
+ copied to the docroot index.html by redo_cologne.sh).
+
+ The description below is the SINGLE site-level hand-written sentence the
+ H7901 acceptance allows; even it interpolates `count` - the live dictionary
+ count from indexdirs.xml (the same number the page body prints). og:image is
+ the one committed Cologne-owned card, csl-apidev og/site_card.png (rendered by
+ csl-apidev/make_site_card.py); nothing points at kosha or samskrtam.ru
+ (H6478 ruling). No braces anywhere in here: the caller runs str.format on
+ the surrounding head template.
+ """
+ site = 'Cologne Digital Sanskrit Dictionaries'
+ image = 'https://www.sanskrit-lexicon.uni-koeln.de/scans/awork/apidev/og/site_card.png'
+ title = 'IITS Koeln \u2014 ' + site
+ desc = ('The %d Cologne Digital Sanskrit Dictionaries of the University of Cologne \u2014 '
+         'digitized dictionaries and reference works, free online.') % count
+ lines = [
+  '<meta property="og:type" content="website">',
+  '<meta property="og:site_name" content="%s">' % site,
+  '<meta property="og:title" content="%s">' % title,
+  '<meta property="og:description" content="%s">' % desc,
+  '<meta property="og:url" content="https://www.sanskrit-lexicon.uni-koeln.de/">',
+  '<meta property="og:image" content="%s">' % image,
+  '<meta property="og:image:width" content="1200">',
+  '<meta property="og:image:height" content="630">',
+  '<meta name="twitter:card" content="summary_large_image">',
+  '<meta name="twitter:title" content="%s">' % title,
+  '<meta name="twitter:description" content="%s">' % desc,
+  '<meta name="twitter:image" content="%s">' % image,
+ ]
+ return '\n'.join(lines)
+
+
 def index01(filein,fileout):
  pfxdict = parse_indexdirs(filein)
  #print pfxdict["PW"].toStringdbg().encode('utf-8')
@@ -623,6 +657,9 @@ https://www.sanskrit-lexicon.uni-koeln.de
 </body>
 </html>
 """.format(today)
+ head = head.replace('<title>IITS Koeln </title>',
+                     '<title>IITS Koeln </title>\n' + og_meta_tags(len(pfxdict) - 1),
+                     1)
  headlines = head.split('\r\n')
  taillines = tail.split('\r\n')
  bodylines=index01_bodylines(pfxdict)
