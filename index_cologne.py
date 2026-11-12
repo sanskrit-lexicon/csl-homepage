@@ -528,9 +528,24 @@ def dictdiv(pfxdict):
  return ans
 
 
+def newslines():
+ """H8170: curated mixed news widget rendered after the dictionary catalogue.
+
+ Fail soft by contract: any feed problem (missing file, malformed JSON)
+ writes a stderr note and renders no widget — dictionary access and page
+ generation never break on news data.
+ """
+ try:
+  import homepage_news
+  return homepage_news.widget_lines()
+ except Exception as e:
+  import sys
+  sys.stderr.write('homepage news widget skipped: %s\n' % e)
+  return []
+
 def index01_bodylines(pfxdict):
  # use '+' on lists to concatenate them
- lines=headerdiv() + purpos1ediv(len(pfxdict) - 1) + dictdiv(pfxdict) 
+ lines=headerdiv() + purpos1ediv(len(pfxdict) - 1) + dictdiv(pfxdict) + newslines()
  return lines
 
 def og_meta_tags(count):

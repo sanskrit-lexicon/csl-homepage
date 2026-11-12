@@ -1,0 +1,35 @@
+{
+  "source_repo": "sanskrit-lexicon/csl-guides",
+  "items": [
+    {
+      "date": "2026-08-31",
+      "slug": "newsletter-2026-08",
+      "title": "CDSL Newsletter — August 2026",
+      "summary": "The August 2026 edition of the Cologne monthly newsletter - corrections, data updates, and project news from the CDSL team.",
+      "status": "Published",
+      "url": "https://sanskrit-lexicon.github.io/csl-guides/news/newsletter-2026-08",
+      "eligible": true,
+      "draft": false
+    },
+    {
+      "date": "2026-07-28",
+      "slug": "newsletter-2026-07",
+      "title": "CDSL Newsletter — July 2026",
+      "summary": "The July 2026 edition of the Cologne monthly newsletter - corrections, data updates, and project news from the CDSL team.",
+      "status": "Published",
+      "url": "https://sanskrit-lexicon.github.io/csl-guides/news/newsletter-2026-07",
+      "eligible": true,
+      "draft": false
+    },
+    {
+      "date": "2026-06-28",
+      "slug": "newsletter-2026-06",
+      "title": "CDSL Newsletter — June 2026",
+      "summary": "The June 2026 edition of the Cologne Digital Sanskrit Dictionaries newsletter - for scholars, students, and dictionary enthusiasts.",
+      "status": "Published",
+      "url": "https://sanskrit-lexicon.github.io/csl-guides/news/newsletter-2026-06",
+      "eligible": true,
+      "draft": false
+    }
+  ]
+}
