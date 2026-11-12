@@ -131,10 +131,21 @@ class SelectTests(unittest.TestCase):
             item(date='2026-09-02', slug='bad-url',
                  url='javascript:alert(1)'),
             item(date='not-a-date', slug='bad-date'),
+            item(date='9999-99-99', slug='impossible-date'),
             item(date='2026-08-01', slug='good'),
         ]
         got = hn.select_items(items)
         self.assertEqual([i['slug'] for i in got], ['good'])
+
+    def test_draft_string_true_fails_closed(self):
+        # Reviewer nit (H8170): a hand-edited feed with draft: "true"
+        # (string) must be excluded exactly like the boolean.
+        items = [
+            item(date='2026-09-30', slug='str-draft', draft='true'),
+            item(date='2026-08-31', slug='published'),
+        ]
+        self.assertEqual([i['slug'] for i in hn.select_items(items)],
+                         ['published'])
 
     def test_fewer_than_three_yields_fewer_never_filler(self):
         got = hn.select_items([item(date='2026-08-31', slug='only')])
