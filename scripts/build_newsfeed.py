@@ -92,7 +92,7 @@ def extract_articles(guides_root):
             warnings.append('skipped %s: invalid work_status %r'
                             % (name, status))
             continue
-        if not DATE_OK(front['date']):
+        if not homepage_news.valid_date(front['date']):
             warnings.append('skipped %s: invalid date %r'
                             % (name, front['date']))
             continue
@@ -113,13 +113,6 @@ def extract_articles(guides_root):
         items.append(item)
     items = homepage_news._order(items)
     return items, warnings
-
-
-DATE_OK_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
-
-
-def DATE_OK(value):
-    return bool(DATE_OK_RE.match(value))
 
 
 def build_document(items):

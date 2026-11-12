@@ -34,6 +34,7 @@ malformed news data can never break dictionary access.
 """
 from __future__ import print_function
 
+import datetime
 import html
 import json
 import os
@@ -49,6 +50,17 @@ STATUS_COLORS = {
 NEWS_URL_BASE = 'https://sanskrit-lexicon.github.io/csl-guides/news/'
 MAX_ITEMS = 3
 DATE_RE = re.compile(r'^\d{4}-\d{2}-\d{2}$')
+
+
+def valid_date(value):
+    """ISO shape AND a real calendar date (9999-99-99 must not sort to #1)."""
+    if not isinstance(value, str) or not DATE_RE.match(value):
+        return False
+    try:
+        datetime.date(int(value[0:4]), int(value[5:7]), int(value[8:10]))
+    except ValueError:
+        return False
+    return True
 
 DEFAULT_FEED = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                             'homepage_news.json')
@@ -89,11 +101,11 @@ def select_items(items, n=MAX_ITEMS):
             continue
         if item.get('eligible') is not True:
             continue          # explicit marker required — never inferred
-        if item.get('draft') is True:
+        if item.get('draft') in (True, 'true'):
             continue          # draft news is never homepage material
         date = item.get('date')
-        if not isinstance(date, str) or not DATE_RE.match(date):
-            continue          # malformed date: skip, never crash
+        if not valid_date(date):
+            continue          # malformed/impossible date: skip, never crash
         status = item.get('status')
         if status not in STATUSES:
             continue          # unknown work status: skip
