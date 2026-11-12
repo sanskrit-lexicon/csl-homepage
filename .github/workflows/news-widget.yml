@@ -1,0 +1,18 @@
+name: news-widget
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  local-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: sanskrit-lexicon/csl-guides
+          path: csl-guides
+      - name: Local gate (widget tests + cite check + feed drift check)
+        run: python3 tests/local_gate.py --guides csl-guides
