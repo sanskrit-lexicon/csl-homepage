@@ -14,5 +14,14 @@ jobs:
         with:
           repository: sanskrit-lexicon/csl-guides
           path: csl-guides
-      - name: Local gate (widget tests + cite check + feed drift check)
-        run: python3 tests/local_gate.py --guides csl-guides
+      # H8215: csl-orig for the dictionary-updates drift check. A full
+      # checkout is ~895 MiB; the feed window is 6 months, so a shallow
+      # blobless clone (~118 MiB measured) carries everything `git log
+      # --since` needs. --no-checkout: only history+trees are read.
+      - name: Shallow clone csl-orig (6-month window)
+        run: >
+          git clone --no-checkout --filter=blob:none
+          --shallow-since="6 months ago"
+          https://github.com/sanskrit-lexicon/csl-orig.git csl-orig
+      - name: Local gate (widget tests + cite check + xampp regen + both feed drift checks)
+        run: python3 tests/local_gate.py --guides csl-guides --orig csl-orig

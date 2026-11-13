@@ -1,0 +1,38 @@
+{
+  "source_repo": "sanskrit-lexicon/csl-orig",
+  "window": "6 months",
+  "items": [
+    {
+      "date": "2026-11-12",
+      "code": "NYBJ",
+      "title": "Nyāyakośa or Dictionary of Technical Terms of Indian Philosophy",
+      "display": "/scans/NYBJScan/2026/web/webtc/indexcaller.php",
+      "subject": "header ampersend correction",
+      "url": "https://github.com/sanskrit-lexicon/csl-orig/commit/9e4979d4dd79d88d13687dc3147ce183eb1af330"
+    },
+    {
+      "date": "2026-11-07",
+      "code": "BOR",
+      "title": "English-Sanskrit Dictionary",
+      "display": "/scans/BORScan/2020/web/webtc/indexcaller.php",
+      "subject": "move ellipsis outside Devanagari delimiters at L=11063",
+      "url": "https://github.com/sanskrit-lexicon/csl-orig/commit/773925ad553b1c048bd2382b3e28ba3dfbbd76f9"
+    },
+    {
+      "date": "2026-11-07",
+      "code": "LRV",
+      "title": "Vaidya Sanskrit-English Dictionary",
+      "display": "/scans/LRVScan/2022/web/webtc/indexcaller.php",
+      "subject": "add <h>1/<h>2 discriminators to homonymous fjvI entries",
+      "url": "https://github.com/sanskrit-lexicon/csl-orig/commit/90fbf5ee3e9050cc19011715d6cfadcea9ce6026"
+    },
+    {
+      "date": "2026-11-07",
+      "code": "STC",
+      "title": "Dictionnaire Sanskrit-Francais",
+      "display": "/scans/STCScan/2020/web/webtc/indexcaller_fr.php",
+      "subject": "s.v. split across lines — join 4 instances",
+      "url": "https://github.com/sanskrit-lexicon/csl-orig/commit/ca5ae563c53300286d692160f2417fdd0c166cb7"
+    }
+  ]
+}

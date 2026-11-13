@@ -868,31 +868,107 @@
 </td></tr>
 </table>
 <hr style="width:89%; margin-left:0px;"/>
+<style>
+ #news { box-sizing:border-box; width:89%; background:#ffffff;
+  border:1px solid #d0d7de; border-radius:8px;
+  padding:16px 20px 14px; margin:1em 0;
+  font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  color:#1f2328; }
+ #news h2 { margin:0 0 .8em; font-size:1.05rem; }
+ #news ul { list-style:none; margin:0; padding:0 0 0 1.4rem; }
+ #news li { position:relative; padding-bottom:1rem; }
+ #news li:last-child { padding-bottom:0; }
+ #news li::before { content:""; position:absolute; left:-1.4rem;
+  top:.45rem; width:10px; height:10px; border-radius:50%;
+  background:#8c959e; z-index:1; }
+ #news li::after { content:""; position:absolute;
+  left:calc(-1.4rem + 4px); top:16px; bottom:-.25rem; width:2px;
+  background:#d0d7de; }
+ #news li:last-child::after { display:none; }
+ #news time.nw-date { display:block; font-size:.8rem;
+  color:#57606a; margin-bottom:.15rem; }
+ #news .nw-sub { margin:.2rem 0 0; font-size:.9rem; color:#57606a;
+  line-height:1.45; }
+ #news .nw-sub a { color:#0969da; text-decoration:none; }
+ #news .nw-sub a:hover { text-decoration:underline; }
+ #news .nw-dict-title { font-weight:600; color:#1f2328;
+  text-decoration:none; }
+ #news .nw-dict-title:hover { color:#0969da; }
+ #news .nw-badge-dict { font-size:.72em; font-weight:700;
+  color:#0969da; margin-left:.35em; }
+ #news .nw-author { color:#57606a; font-size:.85em; }
+ #news .nw-summary { margin:.2rem 0 0; font-size:.9rem;
+  color:#57606a; line-height:1.45; }
+</style>
 <div id="news">
  <h2>Latest news <a href="https://sanskrit-lexicon.github.io/csl-guides/news/" target="_blank" rel="noopener" style="font-size:0.6em; font-weight:normal;">(all news)</a></h2>
  <ul style="width:89%; list-style:none; padding-left:0;">
-  <li style="margin-bottom:0.7em;">
-   <span style="font-weight:bold;">2026-08-31</span> 
+  <li class="nw-item">
+   <time class="nw-date" datetime="2026-08-31" data-iso="2026-08-31">2026-08-31</time>
    <a href="https://sanskrit-lexicon.github.io/csl-guides/news/newsletter-2026-08" target="_blank" rel="noopener">CDSL Newsletter — August 2026</a> 
    <span style="color:#2e7d32; font-weight:bold;">[Published]</span> 
-   <span style="color:#555;">— CDSL Editorial Team</span>
-<br/>   The August 2026 edition of the Cologne monthly newsletter - corrections, data updates, and project news from the CDSL team.
+   <span class="nw-author">— CDSL Editorial Team</span>
+   <p class="nw-summary">The August 2026 edition of the Cologne monthly newsletter - corrections, data updates, and project news from the CDSL team.</p>
   </li>
-  <li style="margin-bottom:0.7em;">
-   <span style="font-weight:bold;">2026-07-28</span> 
+  <li class="nw-item">
+   <time class="nw-date" datetime="2026-07-28" data-iso="2026-07-28">2026-07-28</time>
    <a href="https://sanskrit-lexicon.github.io/csl-guides/news/newsletter-2026-07" target="_blank" rel="noopener">CDSL Newsletter — July 2026</a> 
    <span style="color:#2e7d32; font-weight:bold;">[Published]</span> 
-   <span style="color:#555;">— CDSL Editorial Team</span>
-<br/>   The July 2026 edition of the Cologne monthly newsletter - corrections, data updates, and project news from the CDSL team.
+   <span class="nw-author">— CDSL Editorial Team</span>
+   <p class="nw-summary">The July 2026 edition of the Cologne monthly newsletter - corrections, data updates, and project news from the CDSL team.</p>
   </li>
-  <li style="margin-bottom:0.7em;">
-   <span style="font-weight:bold;">2026-06-28</span> 
+  <li class="nw-item">
+   <time class="nw-date" datetime="2026-06-28" data-iso="2026-06-28">2026-06-28</time>
    <a href="https://sanskrit-lexicon.github.io/csl-guides/news/newsletter-2026-06" target="_blank" rel="noopener">CDSL Newsletter — June 2026</a> 
    <span style="color:#2e7d32; font-weight:bold;">[Published]</span> 
-   <span style="color:#555;">— CDSL Editorial Team</span>
-<br/>   The June 2026 edition of the Cologne Digital Sanskrit Dictionaries newsletter - for scholars, students, and dictionary enthusiasts.
+   <span class="nw-author">— CDSL Editorial Team</span>
+   <p class="nw-summary">The June 2026 edition of the Cologne Digital Sanskrit Dictionaries newsletter - for scholars, students, and dictionary enthusiasts.</p>
+  </li>
+  <li class="nw-item">
+   <time class="nw-date" datetime="2026-11-12" data-iso="2026-11-12">2026-11-12</time>
+   <a class="nw-dict-title" href="/scans/NYBJScan/2026/web/webtc/indexcaller.php">Nyāyakośa or Dictionary of Technical Terms of Indian Philosophy (NYBJ)</a> <span class="nw-badge nw-badge-dict" style="color:#0969da;">[dictionary update]</span>
+   <p class="nw-sub">header ampersend correction <a class="nw-commit" href="https://github.com/sanskrit-lexicon/csl-orig/commit/9e4979d4dd79d88d13687dc3147ce183eb1af330" target="_blank" rel="noopener">&rarr; commit</a></p>
+  </li>
+  <li class="nw-item">
+   <time class="nw-date" datetime="2026-11-07" data-iso="2026-11-07">2026-11-07</time>
+   <a class="nw-dict-title" href="/scans/BORScan/2020/web/webtc/indexcaller.php">English-Sanskrit Dictionary (BOR)</a> <span class="nw-badge nw-badge-dict" style="color:#0969da;">[dictionary update]</span>
+   <p class="nw-sub">move ellipsis outside Devanagari delimiters at L=11063 <a class="nw-commit" href="https://github.com/sanskrit-lexicon/csl-orig/commit/773925ad553b1c048bd2382b3e28ba3dfbbd76f9" target="_blank" rel="noopener">&rarr; commit</a></p>
+  </li>
+  <li class="nw-item">
+   <time class="nw-date" datetime="2026-11-07" data-iso="2026-11-07">2026-11-07</time>
+   <a class="nw-dict-title" href="/scans/LRVScan/2022/web/webtc/indexcaller.php">Vaidya Sanskrit-English Dictionary (LRV)</a> <span class="nw-badge nw-badge-dict" style="color:#0969da;">[dictionary update]</span>
+   <p class="nw-sub">add &lt;h&gt;1/&lt;h&gt;2 discriminators to homonymous fjvI entries <a class="nw-commit" href="https://github.com/sanskrit-lexicon/csl-orig/commit/90fbf5ee3e9050cc19011715d6cfadcea9ce6026" target="_blank" rel="noopener">&rarr; commit</a></p>
+  </li>
+  <li class="nw-item">
+   <time class="nw-date" datetime="2026-11-07" data-iso="2026-11-07">2026-11-07</time>
+   <a class="nw-dict-title" href="/scans/STCScan/2020/web/webtc/indexcaller_fr.php">Dictionnaire Sanskrit-Francais (STC)</a> <span class="nw-badge nw-badge-dict" style="color:#0969da;">[dictionary update]</span>
+   <p class="nw-sub">s.v. split across lines — join 4 instances <a class="nw-commit" href="https://github.com/sanskrit-lexicon/csl-orig/commit/ca5ae563c53300286d692160f2417fdd0c166cb7" target="_blank" rel="noopener">&rarr; commit</a></p>
   </li>
  </ul>
+ <script>
+  (function(){
+   var M=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+   function rel(iso){
+    var p=iso.split("-");
+    var then=new Date(+p[0],+p[1]-1,+p[2]);
+    var now=new Date();
+    var today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    var n=Math.round((today-then)/86400000);
+    if(n<=0)return "today";
+    if(n===1)return "yesterday";
+    if(n<7)return n+" days ago";
+    if(n<14)return "last week";
+    if(n<60)return Math.floor(n/7)+" weeks ago";
+    if(n<365)return Math.floor(n/30)+" months ago";
+    return (+p[2])+" "+M[+p[1]-1]+" "+p[0];
+   }
+   var nodes=document.querySelectorAll("#news time.nw-date[data-iso]");
+   for(var i=0;i<nodes.length;i++){
+    var iso=nodes[i].getAttribute("data-iso");
+    if(/^\d{4}-\d{2}-\d{2}$/.test(iso))nodes[i].textContent=rel(iso);
+   }
+  })();
+ </script>
 </div>
 
 <!--
@@ -934,12 +1010,12 @@ entstanden:
   <h3>Bibliographic reference</h3>
   <pre>
 Cologne Digital Sanskrit Dictionaries, version 2.11.25,
-Cologne University, accessed on November 12, 2026,
+Cologne University, accessed on November 13, 2026,
 DOI 10.5281/zenodo.21319331 (https://doi.org/10.5281/zenodo.21319331)
 https://www.sanskrit-lexicon.uni-koeln.de
   </pre>
    <h2>How to acknowledge usage of data in a website / application?</h2>
-   <p>This website / application uses data from <a href="https://www.sanskrit-lexicon.uni-koeln.de">Cologne Digital Sanskrit Dictionaries</a>, Cologne University, accessed on November 12, 2026.</p>
+   <p>This website / application uses data from <a href="https://www.sanskrit-lexicon.uni-koeln.de">Cologne Digital Sanskrit Dictionaries</a>, Cologne University, accessed on November 13, 2026.</p>
   <hr style="width:89%; margin-left:0px;"/>
  <div id="privacy">
    <h2>Data protection</h2>
@@ -953,7 +1029,7 @@ https://www.sanskrit-lexicon.uni-koeln.de
   <hr style="width:89%; margin-left:0px;"/>
   <div id="footer">
    <a href="mailto:jfunderb@uni-koeln.de">Jim Funderburk</a> and <a href="mailto:drdhaval2785@gmail.com">Dr. Dhaval Patel</a> maintain this web site.
-   <p>Last modified: November 12, 2026</p>
+   <p>Last modified: November 13, 2026</p>
   </div>
 
 
