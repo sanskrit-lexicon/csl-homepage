@@ -211,6 +211,8 @@ class RendererTests(unittest.TestCase):
         self.assertIn('https://github.com/sanskrit-lexicon/csl-orig/commit/',
                       html_out)
         self.assertIn('[dictionary update]', html_out)
+        # display link carries the styled class (CSS selector .nw-dict-title)
+        self.assertIn('class="nw-dict-title" href=', html_out)
 
     def test_null_display_renders_plain_text(self):
         html_out = '\n'.join(hdu.render_rows([row(display=None)]))

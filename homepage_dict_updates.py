@@ -129,10 +129,10 @@ def render_rows(items):
 
         label = '%s (%s)' % (title, code)
         if display:
-            name = ('<a class="nw-title" href="%s">%s</a>'
+            name = ('<a class="nw-dict-title" href="%s">%s</a>'
                     % (html.escape(display, quote=True), label))
         else:
-            name = '<span class="nw-title">%s</span>' % label
+            name = '<span class="nw-dict-title">%s</span>' % label
 
         lines.append('  <li class="nw-item">')
         lines.append('   <time class="nw-date" datetime="%s" '
