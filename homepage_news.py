@@ -137,16 +137,53 @@ def author_of(item):
     return DEFAULT_AUTHOR
 
 
-def render_widget(items):
-    """Render the selected items to homepage HTML lines; [] when empty.
+def render_widget(items, dict_items=None):
+    """Render the hybrid section to homepage HTML lines; [] when empty.
 
-    All text and attribute values are escaped context-correctly. The widget
-    section is omitted entirely when there is nothing real to show.
+    `items`      — validated news rows (H8170 contract, rendered first);
+    `dict_items` — validated dictionary-update rows (H8215, below news).
+    Both empty -> no section at all.  News feed problems are load-bearing
+    for the section (H8170 fail-soft contract, pinned by fixtures); a bad
+    dict feed simply means no dict rows — callers catch and pass [].
+    All text and attribute values are escaped context-correctly.
     """
-    if not items:
+    if not items and not dict_items:
         return []
     lines = [
         '<hr style="width:89%; margin-left:0px;"/>',
+        '<style>',
+        ' #news { box-sizing:border-box; width:89%; background:#ffffff;',
+        '  border:1px solid #d0d7de; border-radius:8px;',
+        '  padding:16px 20px 14px; margin:1em 0;',
+        '  font-family:-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;',
+        '  color:#1f2328; }',
+        ' #news h2 { margin:0 0 .8em; font-size:1.05rem; }',
+        ' #news ul { list-style:none; margin:0; padding:0 0 0 1.4rem; }',
+        ' #news li { position:relative; padding-bottom:1rem; }',
+        ' #news li:last-child { padding-bottom:0; }',
+        # Dot + rail timeline (guides card language, fixed light colors).
+        ' #news li::before { content:""; position:absolute; left:-1.4rem;',
+        '  top:.45rem; width:10px; height:10px; border-radius:50%;',
+        '  background:#8c959e; z-index:1; }',
+        ' #news li::after { content:""; position:absolute;',
+        '  left:calc(-1.4rem + 4px); top:16px; bottom:-.25rem; width:2px;',
+        '  background:#d0d7de; }',
+        ' #news li:last-child::after { display:none; }',
+        ' #news time.nw-date { display:block; font-size:.8rem;',
+        '  color:#57606a; margin-bottom:.15rem; }',
+        ' #news .nw-sub { margin:.2rem 0 0; font-size:.9rem; color:#57606a;',
+        '  line-height:1.45; }',
+        ' #news .nw-sub a { color:#0969da; text-decoration:none; }',
+        ' #news .nw-sub a:hover { text-decoration:underline; }',
+        ' #news .nw-dict-title { font-weight:600; color:#1f2328;',
+        '  text-decoration:none; }',
+        ' #news .nw-dict-title:hover { color:#0969da; }',
+        ' #news .nw-badge-dict { font-size:.72em; font-weight:700;',
+        '  color:#0969da; margin-left:.35em; }',
+        ' #news .nw-author { color:#57606a; font-size:.85em; }',
+        ' #news .nw-summary { margin:.2rem 0 0; font-size:.9rem;',
+        '  color:#57606a; line-height:1.45; }',
+        '</style>',
         '<div id="news">',
         ' <h2>Latest news '
         '<a href="%s" target="_blank" rel="noopener" '
@@ -162,27 +199,78 @@ def render_widget(items):
         color = STATUS_COLORS[status]
         author = html.escape(author_of(item))
         summary = item.get('summary')
-        lines.append('  <li style="margin-bottom:0.7em;">')
-        lines.append('   <span style="font-weight:bold;">%s</span> ' % date)
+        lines.append('  <li class="nw-item">')
+        lines.append('   <time class="nw-date" datetime="%s" '
+                     'data-iso="%s">%s</time>' % (date, date, date))
         lines.append('   <a href="%s" target="_blank" rel="noopener">%s</a> '
                      % (url, title))
         lines.append('   <span style="color:%s; font-weight:bold;">'
                      '[%s]</span> ' % (html.escape(color, quote=True), status))
-        lines.append('   <span style="color:#555;">— %s</span>' % author)
+        lines.append('   <span class="nw-author">— %s</span>' % author)
         if isinstance(summary, str) and summary.strip():
-            lines.append('<br/>   %s' % html.escape(summary))
+            lines.append('   <p class="nw-summary">%s</p>'
+                         % html.escape(summary))
         lines.append('  </li>')
+    if dict_items:
+        import homepage_dict_updates as hdu  # lazy: that module imports us
+        lines.extend(hdu.render_rows(dict_items))
     lines.append(' </ul>')
+    # Absolute ISO dates are in the HTML (no-JS fallback); this tiny inline
+    # script swaps them for viewer-relative labels ("3 days ago") on load —
+    # the guides mount-effect behavior without a framework (H8215).
+    lines.append(' <script>')
+    lines.append('  (function(){')
+    lines.append('   var M=["Jan","Feb","Mar","Apr","May","Jun",'
+                 '"Jul","Aug","Sep","Oct","Nov","Dec"];')
+    lines.append('   function rel(iso){')
+    lines.append('    var p=iso.split("-");')
+    lines.append('    var then=new Date(+p[0],+p[1]-1,+p[2]);')
+    lines.append('    var now=new Date();')
+    lines.append('    var today=new Date(now.getFullYear(),now.getMonth(),'
+                 'now.getDate());')
+    lines.append('    var n=Math.round((today-then)/86400000);')
+    lines.append('    if(n<=0)return "today";')
+    lines.append('    if(n===1)return "yesterday";')
+    lines.append('    if(n<7)return n+" days ago";')
+    lines.append('    if(n<14)return "last week";')
+    lines.append('    if(n<60)return Math.floor(n/7)+" weeks ago";')
+    lines.append('    if(n<365)return Math.floor(n/30)+" months ago";')
+    lines.append('    return (+p[2])+" "+M[+p[1]-1]+" "+p[0];')
+    lines.append('   }')
+    lines.append('   var nodes=document.querySelectorAll('
+                 '"#news time.nw-date[data-iso]");')
+    lines.append('   for(var i=0;i<nodes.length;i++){')
+    lines.append('    var iso=nodes[i].getAttribute("data-iso");')
+    lines.append('    if(/^\\d{4}-\\d{2}-\\d{2}$/.test(iso))'
+                 'nodes[i].textContent=rel(iso);')
+    lines.append('   }')
+    lines.append('  })();')
+    lines.append(' </script>')
     lines.append('</div>')
     return lines
 
 
-def widget_lines(feed_path=DEFAULT_FEED, n=MAX_ITEMS):
-    """Generation-path entry point: feed -> HTML lines, fail soft to []."""
+def widget_lines(feed_path=DEFAULT_FEED, n=MAX_ITEMS, dict_feed_path=None):
+    """Generation-path entry point: both feeds -> HTML lines, fail soft.
+
+    H8170 contract (pinned by fixtures): a missing/malformed NEWS feed
+    degrades to NO widget lines at all.  H8215 addition: the dictionary
+    block fails independently — a bad dict feed yields news-only lines,
+    never an exception on the generation path.
+    """
     try:
         items = load_feed(feed_path)
     except FeedError as exc:
         import sys
         sys.stderr.write('homepage news widget skipped: %s\n' % exc)
         return []
-    return render_widget(select_items(items, n))
+    news = select_items(items, n)
+    dict_items = []
+    try:
+        import homepage_dict_updates as hdu  # lazy: that module imports us
+        path = dict_feed_path or hdu.DEFAULT_FEED
+        dict_items = hdu.select_items(hdu.load_feed(path))
+    except Exception as exc:  # fail-soft by contract — never break generation
+        import sys
+        sys.stderr.write('homepage dict-updates block skipped: %s\n' % exc)
+    return render_widget(news, dict_items)

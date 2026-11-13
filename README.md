@@ -78,6 +78,74 @@ generated page. A merged source change is *not* a live university publication �
 installing on the Cologne server follows the existing `redo_*.sh` operator
 recipe and is out of scope for the widget work itself.
 
+## Dictionary-update rows (H8215, hybrid extension 13-11-2026)
+
+The **same section** carries a second, mechanically-derived block below the
+editorial news: up to **4 dictionary-update rows**, one per dictionary, each
+linking that dictionary's basic display and the responsible csl-orig commit.
+Approved by interactive grill-with-docs on 13-11-2026 as the hybrid of two
+earlier rulings: the H8170 editorial contract (12-11-2026) stays untouched
+for the news block, and a new mechanical feed covers «what changed in the
+dictionaries» — news first, commits below, strictly one section on the page.
+
+**Approved decisions (grill-with-docs, 13-11-2026):**
+
+- Source is csl-orig **git history**, never an editorial marker: commits
+  touching `v02/<code>/` where `<code>` maps to an `indexdirs.xml` `<pfx>`,
+  inside a fixed 6-month window, excluding subject prefixes
+  `docs|ci|chore|refactor|test|build|ai-wip|Merge` (word-boundary — `test(x):`
+  out, `testing data` in) and non-dictionary dirs (`etymology_stats`).
+- **Dedup per dictionary**: one row per dictionary = its newest eligible
+  commit (a multi-dict commit may claim several rows); order date DESC, code
+  ASC; cap 4. Output is exactly what renders, so the wall-clock window can
+  only drift the CI check when a *rendered* row ages out.
+- Row = dictionary title from `indexdirs.xml` → basic display link
+  (`/scans/<PFX>Scan/<year>/web/webtc/indexcaller.php`, STC → `_fr`, PD → no
+  link) + cleaned commit subject → commit link. Cleaning: `DC <date>. See
+  …/issues/N` → `Corrections · csl-corrections#N`, conventional prefixes and
+  trailing closer/PR refs stripped, leading row-code prefix stripped,
+  empty result falls back to the raw subject.
+- Dates: absolute ISO in the HTML (no-JS fallback), a tiny inline vanilla
+  script swaps them for viewer-relative labels ("3 days ago") on load — the
+  guides behavior without a framework.
+- Visual language: the csl-guides card (border, dot timeline, sans-serif
+  inside the widget only) ported as plain HTML+CSS onto the static page.
+- Fail soft per feed: a broken news feed keeps its H8170 contract (no widget
+  at all); a broken dict feed degrades to the news block only — page
+  generation never breaks.
+
+**How the dict feed flows (no runtime API):**
+
+1. Build from a csl-orig checkout: `python scripts/build_dict_updates.py
+   --orig /path/to/csl-orig`, commit `homepage_dict_updates.json`.
+   Deterministic output (no timestamps; date+code ordering) so the same
+   inputs always produce the same bytes.
+2. Gate: `python tests/local_gate.py --guides <csl-guides> --orig <csl-orig>`
+   runs the fixtures + cite check + xampp regen check + **both** feed
+   drift checks. CI (`.github/workflows/news-widget.yml`) clones csl-orig
+   as a **shallow blobless clone** (`--shallow-since="6 months ago"`,
+   ~118 MiB vs ~895 MiB full) and runs the same gate.
+3. Regenerate pages (`python index_xampp.py indexdirs.xml index_xampp.html`,
+   `index_cologne.py` likewise); `scripts/check_xampp_regen.py` proves the
+   committed xampp page equals a fresh generation after masking the two
+   volatile stamps (calendar date, csl-orig version) — catching a forgotten
+   regen the way PR #28's regression class did.
+
+**Domain glossary additions**
+
+| Term | Meaning |
+|---|---|
+| dictionary update row | one (date, dictionary) row whose commit is the newest eligible csl-orig commit touching that dictionary's source dir in the window — mechanical, never editorially marked |
+| code | the `indexdirs.xml` `<pfx>` of a dictionary; matched case-insensitively against the first path segment under `v02/` |
+| subject (cleaned) | commit subject after DC→issue-label, conventional-prefix, closer and row-code stripping; empty ⇒ raw subject |
+| window | fixed `--since "6 months ago"` in `build_dict_updates.py`; output = pure function of (csl-orig history, indexdirs.xml) — the CI check is byte-exact against a fresh shallow clone |
+| regen check | committed `index_xampp.html` == fresh generation after masking only the calendar-date and version stamps |
+
+Rejected: replacing the H8170 widget (two widgets on one page definitively
+not wanted — hybrid chosen); client-side GitHub API fetch (no runtime API on
+a university static page); full csl-orig checkout in CI (895 MiB vs a
+118 MiB window clone). See `docs/adr/0001-hybrid-news-two-tier-feed.md`.
+
 ## Tech stack
 
 - **Runtime**: Python (standard library only; XML via `xml.etree`) plus small POSIX shell wrappers.
